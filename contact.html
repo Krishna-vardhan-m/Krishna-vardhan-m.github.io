@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Balaji Sai Lotus Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('img/background_contact.jpg');
+        }
+    </style>
+</head>
+<body class="bg-home">
+    <div id="header-placeholder"></div>
+
+    <main class="flex flex-col flex-grow">
+        <!-- Other sections like map-container, project-details, site-details, etc. would go here -->
+        <!-- For brevity, only the requested sections are detailed below -->
+
+        <!-- Contact Us and Schedule Appointment Section -->
+        <section class="max-w-screen-xl mx-auto my-8 p-5 bg-white bg-opacity-90 rounded-lg shadow-lg flex flex-col md:flex-row gap-8">
+
+            <!-- Left Column: Contact Us Details -->
+            <div id="contact-info-column" class="flex-1 p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                <h1 class="text-center text-amber-900 text-3xl font-bold mb-6">Contact Us</h1>
+                <div class="contact-item mb-4">
+                    <strong class="text-amber-950 text-lg">Address:</strong>
+                    <p class="text-gray-700 text-base">123 Main Street, City, Country</p>
+                </div>
+                <div class="contact-item mb-4">
+                    <strong class="text-amber-950 text-lg">Phone:</strong>
+                    <p class="text-gray-700 text-base">+1 234 567 8900</p>
+                </div>
+                <div class="contact-item mb-4">
+                    <strong class="text-amber-950 text-lg">Email:</strong>
+                    <p class="text-gray-700 text-base">info@company.com</p>
+                </div>
+                <div class="contact-item">
+                    <strong class="text-amber-950 text-lg">Business Hours:</strong>
+                    <p class="text-gray-700 text-base">Mon-Fri: 9:00 AM - 5:00 PM</p>
+                    <p class="text-gray-700 text-base">Sat-Sun: Closed</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Schedule an Appointment Form -->
+            <div id="appointment-form-column" class="flex-1 p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                <h1 class="text-center text-amber-900 text-3xl font-bold mb-6">Schedule an Appointment</h1>
+                <form id="appointment-form" class="space-y-4">
+                    <div>
+                        <label for="appointment-date" class="block text-gray-700 text-sm font-semibold mb-1">Date:</label>
+                        <input type="date" id="appointment-date" name="appointment-date" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                    </div>
+                    <div>
+                        <label for="appointment-time" class="block text-gray-700 text-sm font-semibold mb-1">Time:</label>
+                        <!-- Changed to a select dropdown for time -->
+                        <select id="appointment-time" name="appointment-time" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                            <option value="">Select a time</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="01:30 PM">01:30 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="full-name" class="block text-gray-700 text-sm font-semibold mb-1">Full Name:</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="John Doe" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                    </div>
+                    <div>
+                        <label for="phone-number" class="block text-gray-700 text-sm font-semibold mb-1">Phone Number:</label>
+                        <input type="tel" id="phone-number" name="phone-number" placeholder="123-456-7890" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label for="email-id" class="block text-gray-700 text-sm font-semibold mb-1">Email ID:</label>
+                        <input type="email" id="email-id" name="email-id" placeholder="john.doe@example.com" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                    </div>
+                    <!-- Updated button with blue background and hover effect -->
+                    <button type="submit" class="bg-blue-600 text-white font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-blue-700 hover:scale-105 w-full">Schedule Appointment</button>
+                </form>
+            </div>
+        </section>   
+
+        
+    </main>
+
+    <!-- Message Box HTML Structure -->
+    <div id="message-box-overlay" class="message-box-overlay hidden">
+        <div class="message-box">
+            <h2 id="message-box-title"></h2>
+            <p id="message-box-content"></p>
+            <button id="message-box-close-btn">OK</button>
+        </div>
+    </div>
+
+    <script>
+        // IMPORTANT: This is a placeholder API endpoint.
+        // You MUST replace '/save-appointment-to-google-sheet' with the actual URL of your backend server endpoint
+        // that handles writing data to Google Sheets.
+        const API_ENDPOINT = 'https://script.google.com/u/3/home/projects/10IbvyBJVBcCuHIEMASXVN7i85vWEhWP_kH9cFVWE1xI2-ar4LAhFaYPI/edit';
+
+        // Get form elements
+        const appointmentForm = document.getElementById('appointment-form');
+
+        // Get message box elements
+        const messageBoxOverlay = document.getElementById('message-box-overlay');
+        const messageBoxTitle = document.getElementById('message-box-title');
+        const messageBoxContent = document.getElementById('message-box-content');
+        const messageBoxCloseBtn = document.getElementById('message-box-close-btn');
+
+        // Function to show a custom message box
+        function showMessageBox(title, message) {
+            messageBoxTitle.textContent = title;
+            messageBoxContent.textContent = message;
+            messageBoxOverlay.classList.remove('hidden');
+        }
+
+        // Event listener for closing the message box
+        messageBoxCloseBtn.addEventListener('click', () => {
+            messageBoxOverlay.classList.add('hidden');
+        });
+
+        // Handle form submission
+        appointmentForm.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission (page reload)
+
+            // Get form values
+            const date = document.getElementById('appointment-date').value;
+            const time = document.getElementById('appointment-time').value;
+            const name = document.getElementById('full-name').value;
+            const phone = document.getElementById('phone-number').value;
+            const email = document.getElementById('email-id').value;
+
+            // Basic validation (optional, HTML5 required already helps)
+            if (!date || !time || !name || !email) {
+                showMessageBox('Error', 'Please fill in all required fields.');
+                return;
+            }
+
+            // Create new appointment object
+            const newAppointment = {
+                date,
+                time,
+                name,
+                phone,
+                email
+            };
+
+            // In a real application, the backend would handle sorting before writing to Google Sheet.
+            // For demonstration, we'll just send the new appointment.
+            // The backend would fetch existing data, add new data, sort, and then update the sheet.
+
+            try {
+                // Send data to the hypothetical backend API
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newAppointment),
+                });
+
+                if (response.ok) {
+                    // Assuming the backend successfully handled saving and sorting to Google Sheet
+                    showMessageBox('Success!', 'Your appointment has been scheduled and sent for Google Sheet integration.');
+                    appointmentForm.reset(); // Clear the form
+                } else {
+                    const errorData = await response.json(); // Try to parse error message from backend
+                    showMessageBox('Error', `Failed to schedule appointment: ${errorData.message || response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Network or server error:', error);
+                showMessageBox('Error', 'Could not connect to the server. Please try again later.');
+            }
+        });
+    </script>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

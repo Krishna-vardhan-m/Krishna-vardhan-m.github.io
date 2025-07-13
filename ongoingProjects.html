@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Projects - Hyderabad</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPuBehPEyRZhqLwQRO37a5INzAZ0XcdSA&libraries=geometry,places&callback=initMap"></script>
+</head>
+<body class="bg-home">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="map-overlay">
+                </div>
+        </div>
+
+        <div id="content-container">
+            <section id="project-selection">
+                <h2>Select a Project:</h2>
+                <select id="project-dropdown">
+                    <option value="">-- Select Project --</option>
+                    </select>
+            </section>
+
+            <section id="project-details" style="display: none;">
+                <h2><span id="project-name"></span></h2>
+                <div class="project-info">
+                    <div class="project-images-container">
+                        <div class="project-images" id="project-images">
+                        </div>
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                    <div class="project-keypoints">
+                        <h3>Key Points:</h3>
+                        <ul id="project-keypoints-list">
+                            </ul>
+                        <h3>Famous Landmark Routes:</h3>
+                        <div id="landmark-routes-container"></div>
+                        <br><br>
+                        <h3>Sites:</h3>
+                        <ul id="site-list"> </ul>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="site-details" style="display: none;">
+                <h2><span id="site-name"></span></h2>
+                <div class="site-layout-wrapper">
+                    <div id="site-layout-canvas">
+                        </div>
+                    <div id="plot-details">
+                        <h3>Plot Details:</h3>
+                        <p><strong>Area:</strong> <span id="plot-area"></span></p>
+                        <p><strong>Direction:</strong> <span id="plot-direction"></span></p>
+                        <p><strong>Key Features:</strong> <span id="plot-keyfeatures"></span></p>
+                        <p><strong>Status:</strong> <span id="plot-status"></span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
