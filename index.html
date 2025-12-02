@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Balaji Sai Lotus Farm</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col bg-home">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="home-hero">
+            <div class="hero-content">
+                <h1>Welcome to Balaji Sai Lotus Farm</h1>
+                <p>Your dream property awaits in Hyderabad.</p>
+            </div>
+        </section>
+        <div class="swami-container">
+        <section id="vivekananda-section">
+            <div class="vivekananda-circle">
+                <img src="img/vivekananda.jpg" alt="Swami Vivekananda">
+            </div>
+            <h2>Inspiration</h2>
+            <p>"Arise, awake, and stop not till the goal is reached." - Swami Vivekananda</p>
+        </section>
+        </div>
+        <section id="company-thumbnail">
+            <h2>About Our Company</h2>
+            <p>Balaji Sai Lotus Farm is a leading real estate developer in Hyderabad, committed to delivering high-quality projects and exceptional customer service.</p>
+            <img src="img/company_thumbnail.jpg" alt="Company Thumbnail">
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

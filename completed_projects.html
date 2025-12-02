@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Projects - Balaji Sai Lotus Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('img/background_completed.jpg');
+        }
+    </style>
+</head>
+<body class="bg-home">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section id="completed-projects-content">
+            <h1>Our Completed Projects</h1>
+            <div class="project-card section-container-about">
+                <h2>Green Meadows</h2>
+                <img src="img/completed_project1.jpg" alt="Green Meadows">
+                <p><strong>Address:</strong> Plot No. 10, Green Meadows Colony, Gachibowli, Hyderabad</p>
+                <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/example1" target="_blank">View on Map</a></p>
+                <p><strong>About:</strong> A serene residential project offering spacious plots and modern amenities, located in the bustling IT hub of Gachibowli. Completed in 2022, it provides excellent connectivity and a peaceful living environment.</p>
+            </div>
+            <div class="project-card section-container-about">
+                <h2>Lotus Enclave</h2>
+                <img src="img/completed_project2.jpg" alt="Lotus Enclave">
+                <p><strong>Address:</strong> Survey No. 25, Lotus Enclave, Kompally, Hyderabad</p>
+                <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/example2" target="_blank">View on Map</a></p>
+                <p><strong>About:</strong> An exclusive gated community designed for luxurious living, featuring premium villas and plots. Developed with a focus on green spaces and sustainable living, completed in 2023.</p>
+            </div>
+            <div class="project-card section-container-about">
+                <h2>Sai Residency</h2>
+                <img src="img/completed_project1.jpg" alt="Sai Residency">
+                <p><strong>Address:</strong> H.No. 3-45, Sai Residency, Manikonda, Hyderabad</p>
+                <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/example3" target="_blank">View on Map</a></p>
+                <p><strong>About:</strong> A well-planned apartment complex offering 2BHK and 3BHK flats with all essential facilities. Its prime location ensures easy access to schools, hospitals, and shopping centers. Completed in 2021.</p>
+            </div>
+            <div class="project-card section-container-about">
+                <h2>Balaji Hills</h2>
+                <img src="img/completed_project2.jpg" alt="Balaji Hills">
+                <p><strong>Address:</strong> Near Outer Ring Road, Balaji Hills, Shamshabad, Hyderabad</p>
+                <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/example4" target="_blank">View on Map</a></p>
+                <p><strong>About:</strong> A sprawling layout of open plots ideal for investment and future development. Strategically located near the Outer Ring Road, offering excellent appreciation potential. Completed in 2020.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

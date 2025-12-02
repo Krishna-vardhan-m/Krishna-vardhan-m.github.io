@@ -1,0 +1,812 @@
+[
+      {
+        "projectId": "projA",
+        "projectName": "Green Enclave",
+        "projectLocation": { "lat": 17.4375, "lng": 78.4482 },
+        "projectImages": ["img/land.jpg", "img/plot1.png"],
+        "projectKeyPoints": [
+          "24/7 Security",
+          "Gated Community",
+          "Near Hitech City",
+          "Excellent Connectivity"
+        ],
+        "famousLandmarksRoutes": [
+              {"name": "Charminar", "location": {"lat": 17.3616, "lng": 78.4747}},
+              {"name": "Golkonda Fort", "location": {"lat": 17.3828, "lng": 78.4011}}
+            ],
+        "sites": [
+          {
+            "siteId": "projA_site1",
+            "siteName": "P1 - Emerald Park",
+            "siteLayout": "img/plot.png",
+            "siteLayoutWidth":"594",
+            "siteLayoutHeight":"1047",
+            "siteLocation": { "lat": 17.4380, "lng": 78.4490 },
+            
+            "plots": [
+              {"plotId": "projA_site1_plot1", "plotName": "Plot A1", "area": "150 sq yards", "direction": "North", "keyFeatures": ["Corner Plot", "Park Facing"], "status": "booked", "layoutCoordinates": "M10 10 L110 10 L110 60 L10 60 Z"},
+              {"plotId": "projA_site1_plot2", "plotName": "Plot A2", "area": "180 sq yards", "direction": "East", "keyFeatures": [], "status": "available", "layoutCoordinates": "M120 10 L220 10 L220 70 L120 70 Z"},
+              {"plotId": "projA_site1_plot3", "plotName": "Plot A3", "area": "120 sq yards", "direction": "South", "keyFeatures": ["Near Main Road"], "status": "pending", "layoutCoordinates": "M10 70 L100 70 L100 120 L10 120 Z"}
+            ]
+          },
+          {
+            "siteId": "projA_site2",
+            "siteName": "P2 - Sapphire Gardens",
+            "siteLayout": "img/plot10.png",
+            "siteLayoutWidth":"594",
+            "siteLayoutHeight":"1047",
+            "siteLocation": { "lat": 17.4400, "lng": 78.4500 },
+            "famousLandmarksRoutes": [],
+            "plots": [
+                {"plotId": "projA_site2_plot1", "plotName": "Plot B1", "area": "200 sq yards", "direction": "West", "keyFeatures": ["Community View"], "status": "available", "layoutCoordinates": "M10 10 L110 10 L110 60 L10 60 Z"}
+            ]
+          }
+        ]
+      },
+      {
+        "projectId": "projB",
+        "projectName": "Royal Residency",
+        "projectLocation": { "lat": 17.4000, "lng": 78.5000 },
+        "projectImages": ["img/land.jpg","img/plot1.png","img/land.jpg", "img/plot1.png"],
+        "projectKeyPoints": [
+          "Clubhouse",
+          "Swimming Pool",
+          "Close to Financial District"
+        ],
+        "famousLandmarksRoutes": [
+              {"name": "Charminar", "location": {"lat": 17.3616, "lng": 78.4747}},
+              {"name": "Golkonda Fort", "location": {"lat": 17.3828, "lng": 78.4011}}
+            ],
+        "sites": [
+          {
+            "siteId": "projB_site0",
+            "siteName": "P1 - Lotus Gardens",
+            "siteLayout": "img/plot10.png",
+            "siteLayoutWidth":"594",
+            "siteLayoutHeight":"1047",
+            "siteLocation": { "lat": 17.4012, "lng": 78.5012 },
+            "famousLandmarksRoutes": [],
+            "plots": [
+                {"plotId": "projA_site2_plot1", "plotName": "Plot B1", "area": "200 sq yards", "direction": "West", "keyFeatures": ["Community View"], "status": "available", "layoutCoordinates": "M10 10 L110 10 L110 60 L10 60 Z"}
+            ]
+          },
+          {
+            "siteId": "projB_site1",
+            "siteName": "P1 - Diamond Villas",
+            "siteLayout": "img/plot1.png",
+            "siteLayoutWidth":"593.91998",
+            "siteLayoutHeight":"1047.04",
+            "siteLocation": { "lat": 17.4010, "lng": 78.5010 },
+            "plots": [
+                {
+                "plotId": "projB_site1_plot1",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 194.58167,693.98926 26.9162,-5.83184 -0.33646,45.08463 -26.69189,0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot2",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 194.58167,733.24205 h 26.46759 l -0.11215,38.80418 -26.80404,-0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot3",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 194.24522,772.27054 26.35544,0.2243 0.2243,38.13128 -26.80404,0.11215 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot4", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 194.02092,811.52332 h 26.91619 l -0.11215,30.95363 -26.91619,1.12151 z" 
+                },
+                {
+                "plotId": "projB_site1_plot5", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 221.49787,811.29902 0.2243,30.95363 27.92555,-1.34581 v -29.27137 z" 
+                },
+                {
+                "plotId": "projB_site1_plot6", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 221.72217,772.49484 h 27.92555 c 0,0 0,37.79482 0.11215,38.24343 0.11215,0.4486 -28.48631,0.11215 -28.48631,0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot7", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 221.38572,771.70978 h 28.262 l -0.11215,-38.13128 -28.14985,-0.2243 z" 
+                },
+                {
+                "plotId": "projB_site1_plot8", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 221.83432,688.83033 -0.4486,43.73882 28.4863,0.11215 -0.2243,-49.57067 z" 
+                },
+                {
+                "plotId": "projB_site1_plot9", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 273.76015,678.176 26.01899,-5.49539 2.35516,0.11215 0.22431,55.96326 H 273.8723 z" 
+                },
+                {
+                "plotId": "projB_site1_plot10", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 273.8723,729.76538 28.262,0.11215 v 37.90697 l -28.14985,0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot11",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 273.98445,768.90601 28.14985,-0.2243 v 38.35558 l -28.0377,-0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot12",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 273.98445,807.82235 28.14985,-0.11216 -0.11215,31.06578 -27.92555,0.89721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot13",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 303.36796,807.71019 h 28.26201 l -0.11215,29.49567 -0.78506,0.33645 -27.14049,0.78506 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot14", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 303.25581,768.79386 -0.11215,38.24343 28.59846,0.2243 0.4486,-38.91633 z" 
+                },
+                {
+                "plotId": "projB_site1_plot15", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 303.14366,767.7845 28.71061,0.2243 -0.11215,-38.46773 -28.59846,0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot16", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 303.14366,672.68061 v 56.29971 l 28.59846,0.11215 -0.2243,-56.63616 z" 
+                },
+                {
+                "plotId": "projB_site1_plot17", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.77914,624.56791 0.56075,23.88812 h 31.40223 l 0.11215,-24.33673 z" 
+                },
+                {
+                "plotId": "projB_site1_plot18", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.10623,587.89459 1.00936,36.33687 31.85083,-0.22431 -0.2243,-36.22471 z" 
+                },
+                {
+                "plotId": "projB_site1_plot19", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 298.76978,549.09041 33.08449,-0.2243 -0.33645,38.80418 h -32.41159 z" 
+                },
+                {
+                "plotId": "projB_site1_plot20", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 298.32118,509.83762 33.53309,-0.33645 -0.11215,39.14063 -33.64524,0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot21",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 298.65763,470.69698 0.11215,39.02849 h 32.86019 l 0.11215,-39.36494 z" 
+                },
+                {
+                "plotId": "projB_site1_plot22",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 298.43333,431.78065 0.2243,38.80418 32.97234,0.11215 V 431.6685 Z" 
+                },
+                {
+                "plotId": "projB_site1_plot23",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 298.76978,407.55607 33.19664,-0.2243 -0.2243,24.11243 h -33.64524 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot24", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.84519,407.78038 -0.11215,24.00027 29.27136,0.2243 0.44861,-24.78533 z" 
+                },
+                {
+                "plotId": "projB_site1_plot25", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.73304,431.8928 -0.11215,39.25279 29.38351,-0.33645 0.11215,-39.25279 z" 
+                },
+                {
+                "plotId": "projB_site1_plot26", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.84519,471.25774 -0.11215,38.46773 29.60781,-0.11215 -0.2243,-38.80418 z" 
+                },
+                {
+                "plotId": "projB_site1_plot27", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.84519,509.83762 0.11215,38.91633 29.04706,-0.2243 0.11215,-38.69203 z" 
+                },
+                {
+                "plotId": "projB_site1_plot28", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.84519,549.20256 29.38351,-0.44861 0.11215,38.80419 h -29.60781 z" 
+                },
+                {
+                "plotId": "projB_site1_plot29", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.84519,588.00674 29.04706,-0.11215 0.33645,33.53309 -29.15921,-5.83184 z" 
+                },
+                {
+                "plotId": "projB_site1_plot30", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 384.45301,588.23104 c 1.79441,0 28.262,-0.11215 28.262,-0.11215 l 0.11215,39.14064 -28.48631,-5.83185 z" 
+                },
+                {
+                "plotId": "projB_site1_plot31",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 384.45301,587.67029 28.59845,-0.11215 -0.11215,-38.57988 -28.4863,0.2243 z" 
+                },
+                {
+                "plotId": "projB_site1_plot32",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 384.45301,548.4175 h 28.4863 l 0.33646,-38.35558 -28.59846,-0.11215 z" 
+                },
+                {
+                "plotId": "projB_site1_plot33",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 384.67731,471.03344 h 28.14985 v 38.24343 h -28.37415 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot34", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 384.67731,431.8928 -0.2243,38.69203 28.4863,-0.11215 0.22431,-38.69203 z" 
+                },
+                {
+                "plotId": "projB_site1_plot35", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 384.78946,407.55607 -0.2243,24.00028 h 28.37415 l 0.22431,-24.11243 z" 
+                },
+                {
+                "plotId": "projB_site1_plot36", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 437.05174,588.34319 28.48631,-0.4486 -0.11215,50.58002 -28.48631,-5.83184 z" 
+                },
+                {
+                "plotId": "projB_site1_plot37", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.93959,587.44599 -0.11215,-38.35558 28.59846,-0.2243 0.33645,38.57988 z" 
+                },
+                {
+                "plotId": "projB_site1_plot38", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 437.16389,510.06192 -0.4486,38.35558 29.04706,0.11215 0.2243,-38.80418 z" 
+                },
+                {
+                "plotId": "projB_site1_plot39", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.82744,509.38902 v -38.57988 l 28.93491,-0.11216 0.11215,38.91634 z" 
+                },
+                {
+                "plotId": "projB_site1_plot40", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.93959,470.24838 0.11215,-38.35558 h 28.48631 l -0.11215,38.46773 z" 
+                },
+                {
+                "plotId": "projB_site1_plot41",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 436.93959,407.55607 -0.2243,23.55168 28.82276,0.11215 -0.11215,-23.66383 z" 
+                },
+                {
+                "plotId": "projB_site1_plot42",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 518.13678,299.66699 28.48631,-0.44861 -10.31788,108.11339 h -18.39273 z" 
+                },
+                {
+                "plotId": "projB_site1_plot43",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 518.00461,251.38926 v 24.5838 h 31.24523 l 3.33071,-24.10799 z" 
+                },        
+                {
+                "plotId": "projB_site1_plot44", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 518.00461,211.89656 v 39.96851 l 34.25873,-0.31721 4.75815,-39.4927 z" 
+                },        
+                {
+                "plotId": "projB_site1_plot45", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 518.00461,173.35549 v 38.69967 h 39.17549 l 3.96513,-38.54106 z" 
+                },
+                {
+                "plotId": "projB_site1_plot46", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 518.16322,134.49722 -0.15861,39.33409 42.6648,-0.47582 4.91676,-39.01688 z" 
+                },
+                {
+                "plotId": "projB_site1_plot47", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 518.00461,95.638941 51.7053,-0.158606 -3.96513,39.334095 h -47.89877 z" 
+                },
+                {
+                "plotId": "projB_site1_plot48", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 517.84601,56.463454 h 56.30484 l -4.44094,39.492697 -51.8639,-0.158605 z" 
+                },
+                {
+                "plotId": "projB_site1_plot49", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 518.13678,21.532957 60.56144,-9.420669 -4.93463,44.187423 h -55.62681 z" 
+                },
+                {
+                "plotId": "projB_site1_plot50", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 465.34768,30.13499 29.65918,-4.916762 v 31.086621 l -29.65918,-0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot51", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 465.34768,55.829033 v 39.334092 l 29.65918,0.158605 -0.31722,-39.334091 z" 
+                },
+                {
+                "plotId": "projB_site1_plot52",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 465.34768,95.163125 h 29.50057 l -0.15861,38.541065 -29.18335,0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot53",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 465.50629,134.18001 h 29.34196 l 0.15861,39.01688 -29.50057,-0.15861 z" 
+                },
+                {
+                "plotId": "projB_site1_plot54",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 465.18908,173.35549 29.81778,-0.1586 -0.31722,38.22385 -29.34196,-0.31721 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot55", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 465.34768,211.89656 29.65918,-0.63442 -0.31722,38.85827 -29.34196,0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot56", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 465.18908,250.75483 30.13499,-0.1586 -0.31721,25.53544 h -29.50057 z" 
+                },
+                {
+                "plotId": "projB_site1_plot57", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 435.84711,250.75483 29.81778,-0.31721 -0.1586,25.69405 -29.50057,-0.47582 z" 
+                },
+                {
+                "plotId": "projB_site1_plot58", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.16432,211.73795 28.86615,-0.31721 0.31721,39.01688 -29.65917,0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot59", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.32293,173.35549 29.34196,-0.31721 v 38.38246 h -29.50057 z" 
+                },
+                {
+                "plotId": "projB_site1_plot60", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.00572,134.33861 29.65917,-0.1586 v 39.17548 l -29.65917,-0.1586 z" 
+                },
+                {
+                "plotId": "projB_site1_plot61", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 436.16432,95.00452 29.34197,-0.158605 -0.15861,39.175485 -29.50057,-0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot62",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 436.32293,34.893146 29.34196,-4.916762 -0.1586,64.869531 h -29.81778 z" 
+                },
+                {
+                "plotId": "projB_site1_plot63",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 384.30042,44.568064 28.70754,-5.551183 V 95.00452 h -28.86615 z" 
+                },
+                {
+                "plotId": "projB_site1_plot64",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 383.98321,95.163125 h 28.86615 V 134.0214 l -28.86615,-0.1586 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot65", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 384.30042,134.33861 28.86615,-0.1586 -0.31721,38.85827 -28.54894,0.15861 z" 
+                },
+                {
+                "plotId": "projB_site1_plot66", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 384.14181,173.5141 28.86615,-0.47582 -0.1586,38.85828 -28.54894,-0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot67", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 384.14181,211.73795 29.02476,-0.31721 v 39.17549 l -28.86615,-0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot68", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 383.98321,250.75483 29.34196,-0.47581 -0.1586,25.53544 -28.86615,-0.15861 z" 
+                },
+                {
+                "plotId": "projB_site1_plot69", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.95846,250.75483 h 29.50057 l -0.15861,25.37684 -29.34196,-0.31721 z" 
+                },
+                {
+                "plotId": "projB_site1_plot70", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.95846,211.57935 h 29.34196 l 0.15861,38.85827 -29.81778,0.15861 z" 
+                },
+                {
+                "plotId": "projB_site1_plot71", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 354.79985,173.19689 h 29.34196 l 0.15861,38.22385 h -29.65917 z" 
+                },
+                {
+                "plotId": "projB_site1_plot72",
+                "plotName": "", 
+                "area": "150 sq yards",
+                "direction": "North",
+                "keyFeatures": ["Corner Plot", "Road Facing"],
+                "status": "booked", 
+                "layoutCoordinates": "m 355.11706,134.0214 h 29.18336 l 0.15861,39.33409 -29.65918,-0.1586 z" 
+                },
+                {
+                "plotId": "projB_site1_plot73",
+                "plotName": "",
+                "area": "200 sq yards",
+                "direction": "East",
+                "keyFeatures": [],
+                "status": "available", 
+                "layoutCoordinates": "m 354.79985,95.00452 h 29.50057 l -0.15861,39.01688 -29.34196,0.15861 z" 
+                },
+                {
+                "plotId": "projB_site1_plot74",
+                "plotName": "",
+                "area": "120 sq yards",
+                "direction": "South",
+                "keyFeatures": ["Near Park"],
+                "status": "pending", 
+                "layoutCoordinates": "m 354.64125,49.960641 29.65917,-5.709788 0.31721,50.753667 -29.81778,-0.158605 z" 
+                },
+                
+                {
+                "plotId": "projB_site1_plot75", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.55484,250.65708 -0.56076,25.12178 32.29944,0.11215 0.33645,-25.00963 z" 
+                },
+                {
+                "plotId": "projB_site1_plot76", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.33053,250.20848 -0.11215,-38.46773 h 32.41159 l -0.4486,38.24342 z" 
+                },
+                {
+                "plotId": "projB_site1_plot77", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.33053,211.29214 -0.11215,-38.13128 32.18729,-0.2243 v 38.46773 z" 
+                },
+                {
+                "plotId": "projB_site1_plot78", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.44269,134.58098 31.96298,-0.33645 -0.2243,38.46773 -31.62653,0.4486 z" 
+                },
+                {
+                "plotId": "projB_site1_plot79", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.77914,95.328196 -0.33645,38.355584 31.85083,0.2243 0.11215,-38.916337 z" 
+                },
+                {
+                "plotId": "projB_site1_plot80", 
+                "plotName": "",
+                "area": "XXX sq yards", 
+                "direction": "YYY",
+                "keyFeatures": [],
+                "status": "available",
+                "layoutCoordinates": "m 299.55484,94.430989 0.33645,-33.533095 31.51438,-6.392596 0.11215,40.262144 z" 
+                }
+            ]
+          }
+        ]
+      }
+    ]

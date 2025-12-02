@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Balaji Sai Lotus Farm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('img/background_about.jpg');
+        }
+    </style>
+</head>
+<body class="bg-home">
+    <div id="header-placeholder"></div>
+
+    <main>
+        <br><br>
+        <div class="project-card section-container-about">
+        <section id="about-content">
+            <h1>About Balaji Sai Lotus Farm</h1>
+            <p>Balaji Sai Lotus Farm is a premier real estate development company based in Hyderabad, India. With a commitment to excellence and customer satisfaction, we specialize in creating residential and commercial properties that offer comfort, luxury, and value.</p>
+            <p>Our vision is to transform landscapes into thriving communities, providing modern amenities and sustainable living environments. We pride ourselves on our transparent dealings, ethical practices, and timely delivery of projects.</p>
+            <p>Our team comprises experienced professionals dedicated to delivering high-quality construction and innovative designs. We believe in building lasting relationships with our clients by understanding their needs and exceeding their expectations.</p>
+        </section>
+        </div>
+        
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html;
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
