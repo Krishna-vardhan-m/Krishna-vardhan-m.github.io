@@ -32,10 +32,10 @@ async function fetchProjectsData() {
     // const response = await fetch('/api/projects');
     // const data = await response.json();
     // return data;
-    const response = await fetch('projects.json'); // Path to your JSON file
+        const response = await fetch('projects.json'); // Path to your JSON file
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
-    }
+        }
     const data = await response.json();
 
     // For demonstration, use the conceptual JSON data:
@@ -232,7 +232,7 @@ function displaySiteDetails(projectId, siteId) {
     img.setAttribute("width", site.siteLayoutWidth); // Match viewBox width
     img.setAttribute("height", site.siteLayoutHeight); // Match viewBox height
     svg.appendChild(img);
-    
+
     
 
 
@@ -268,7 +268,7 @@ function displaySiteDetails(projectId, siteId) {
             text.textContent = plot.plotName;
             text.style.pointerEvents = "none";
             svg.appendChild(text);
-}
+        }
     });
 
     // Clear existing route directions

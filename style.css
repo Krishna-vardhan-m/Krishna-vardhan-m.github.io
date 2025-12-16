@@ -68,7 +68,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f97416fa; /* Sienna - a darker ochre/brown */
+    background-color: #E3842A; /* Sienna - a darker ochre/brown */
     border-radius: 5px;
 }
 
@@ -313,7 +313,7 @@ path:hover {
 }
 
 h1, h2, h3 {
-    color: #ea580c; /* SaddleBrown - a deep earthy brown */
+    color: #E3842A; /* SaddleBrown - a deep earthy brown */
 }
 
 ul {
@@ -326,7 +326,7 @@ p {
 
 /* Footer Styles */
 footer {
-    background-color: #0d542b; /* Ochre */
+    background-color: #266a26; /* Ochre */
     color: #ffffff;
     padding: 20px;
     text-align: center;
@@ -370,7 +370,7 @@ footer {
     font-size: 3rem;
     margin-bottom: 10px;
     font-style: italic;
-    color:#ff4e08e5;
+    color:#E3842A;
 }
 
 .hero-content p {

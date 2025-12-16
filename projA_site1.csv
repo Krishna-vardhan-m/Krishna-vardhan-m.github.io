@@ -1,0 +1,4 @@
+plotId,plotName,area,direction,keyFeatures,status,layoutCoordinates
+projA_site1_plot1,Plot A1,150 sq yards,North,"[\"Corner Plot\", \"Park Facing\"]",booked,"M10 10 L110 10 L110 60 L10 60 Z"
+projA_site1_plot2,Plot A2,180 sq yards,East,,available,"M120 10 L220 10 L220 70 L120 70 Z"
+projA_site1_plot3,Plot A3,120 sq yards,South,"Near Main Road",pending,"M10 70 L100 70 L100 120 L10 120 Z"
