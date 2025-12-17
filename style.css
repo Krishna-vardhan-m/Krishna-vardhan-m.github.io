@@ -90,11 +90,12 @@ nav ul li a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #E3842A;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    border-radius: 5px;
 }
 
 main {
@@ -316,6 +317,11 @@ h1, h2, h3 {
     color: #E3842A; /* SaddleBrown - a deep earthy brown */
 }
 
+#pthumbnail{
+    color : white
+
+}
+
 ul {
     padding-left: 20px;
 }
@@ -363,7 +369,7 @@ footer {
     background-position: center;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 70px 20px;
 }
 
 .hero-content h1 {
@@ -403,7 +409,7 @@ footer {
 #company-thumbnail {
     text-align: center;
     padding: 50px 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(42, 42, 42, 0.9);
     margin-top: 20px;
 }
 
