@@ -237,6 +237,7 @@ main {
     color: white;
 }
 
+
 .site-layout-wrapper {
     display: flex;
     gap: 20px;
@@ -254,13 +255,57 @@ main {
     background-color: #f0f0f0;
 }
 
-#plot-details {
-    flex: 1;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fefefe;
+/* Modal overlay and centered popup for plot details */
+#modal-overlay {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5); /* black with 50% opacity */
+    z-index: 2000;
 }
+
+/* Ensure the hidden state hides the overlay even though #modal-overlay sets display:flex */
+#modal-overlay.hidden {
+    display: none;
+}
+
+#plot-modal {
+    background: rgba(0,0,0,0.5); /* popup box black at 50% opacity */
+    color: #fff;
+    padding: 20px;
+    min-width: 320px;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#modal-plot-content p { margin: 6px 0; }
+
+#modal-close-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#modal-close-btn:hover {
+    background: #E3842A;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hidden { display: none; }
 
 /* Plot Status Colors */
 .plot-booked { fill: red; opacity: 0.7; }

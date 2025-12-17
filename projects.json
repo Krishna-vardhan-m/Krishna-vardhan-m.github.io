@@ -22,7 +22,7 @@
         "siteLayoutWidth": "594",
         "siteLayoutHeight": "1047",
         "siteLocation": { "lat": 17.4380, "lng": 78.4490 },
-        "plots": "projA_site1.csv"
+        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
       },
       {
         "siteId": "projA_site2",
@@ -32,7 +32,7 @@
         "siteLayoutHeight": "1047",
         "siteLocation": { "lat": 17.4400, "lng": 78.4500 },
         "famousLandmarksRoutes": [],
-        "plots": []
+        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
       }
     ]
   },
@@ -59,7 +59,7 @@
         "siteLayoutHeight": "1047",
         "siteLocation": { "lat": 17.4012, "lng": 78.5012 },
         "famousLandmarksRoutes": [],
-        "plots": []
+        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
       },
       {
         "siteId": "projB_site1",
@@ -68,7 +68,7 @@
         "siteLayoutWidth": "593.91998",
         "siteLayoutHeight": "1047.04",
         "siteLocation": { "lat": 17.4010, "lng": 78.5010 },
-        "plots": "projB_site1.csv"
+        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
       }
     ]
   }

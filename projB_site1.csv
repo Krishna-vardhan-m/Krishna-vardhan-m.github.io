@@ -1,3 +1,0 @@
-plotId,plotName,area,direction,keyFeatures,status,layoutCoordinates
-projB_site1_plot1,Plot 1,150 sq yards,North,"[\"Corner Plot\", \"Road Facing\"]",booked,"m 194.58167,693.98926 26.9162,-5.83184 -0.33646,45.08463 -26.69189,0.11215 z"
-projB_site1_plot2,Plot 2,200 sq yards,East,,available,"m 194.58167,733.24205 h 26.46759 l -0.11215,38.80418 -26.80404,-0.11215 z"

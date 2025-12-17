@@ -54,13 +54,22 @@
                 <div id="site-source-msg" style="font-size:12px;color:#555;margin-top:4px;"></div>
                 <div class="site-layout-wrapper">
                     <div id="site-layout-canvas">
+                    </div>
+                    <!-- Removed right-side plot details; using centered modal popup instead -->
+                </div>
+                <!-- Modal overlay for plot details (hidden by default) -->
+                <div id="modal-overlay" class="hidden" aria-hidden="true">
+                    <div id="plot-modal" role="dialog" aria-modal="true" aria-labelledby="modal-plot-name">
+                        <h3 id="modal-plot-name">Plot Details</h3>
+                        <div id="modal-plot-content">
+                            <p><strong>Area:</strong> <span id="modal-plot-area"></span></p>
+                            <p><strong>Direction:</strong> <span id="modal-plot-direction"></span></p>
+                            <p><strong>Key Features:</strong> <span id="modal-plot-keyfeatures"></span></p>
+                            <p><strong>Status:</strong> <span id="modal-plot-status"></span></p>
                         </div>
-                    <div id="plot-details">
-                        <h3>Plot Details:</h3>
-                        <p><strong>Area:</strong> <span id="plot-area"></span></p>
-                        <p><strong>Direction:</strong> <span id="plot-direction"></span></p>
-                        <p><strong>Key Features:</strong> <span id="plot-keyfeatures"></span></p>
-                        <p><strong>Status:</strong> <span id="plot-status"></span></p>
+                        <div style="width:100%;display:flex;justify-content:center;margin-top:12px;">
+                            <button id="modal-close-btn" class="btn ">Close</button>
+                        </div>
                     </div>
                 </div>
             </section>
