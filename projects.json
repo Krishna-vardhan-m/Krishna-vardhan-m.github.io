@@ -1,7 +1,7 @@
 [
   {
     "projectId": "projA",
-    "projectName": "Green Enclave",
+    "projectName": "Lotus Avenue",
     "projectLocation": { "lat": 17.4375, "lng": 78.4482 },
     "projectImages": ["img/land.jpg", "img/plot1.png"],
     "projectKeyPoints": [
@@ -16,24 +16,14 @@
     ],
     "sites": [
       {
-        "siteId": "projA_site1",
-        "siteName": "P1 - Emerald Park",
-        "siteLayout": "img/plot.png",
-        "siteLayoutWidth": "594",
-        "siteLayoutHeight": "1047",
+        "siteId": "Lotus_Avenue_site0",
+        "siteName": "P1 - Lotus Avenue",
+        "siteLayout": "img/Lotus Avenue.jpg",
+        "siteLayoutWidth": "1200.000",
+        "siteLayoutHeight": "1477.440",
         "siteLocation": { "lat": 17.4380, "lng": 78.4490 },
-        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
-      },
-      {
-        "siteId": "projA_site2",
-        "siteName": "P2 - Sapphire Gardens",
-        "siteLayout": "img/plot10.png",
-        "siteLayoutWidth": "594",
-        "siteLayoutHeight": "1047",
-        "siteLocation": { "lat": 17.4400, "lng": 78.4500 },
-        "famousLandmarksRoutes": [],
-        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
-      }
+        "plots": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQwmQu0NlBM6aCcnmMXk_wiQhJRWUzPggH0v4DIP6ajQFHi6SmqibyXED-GIoKAlwQRtEY7rpStQ2hg/pub?output=csv"
+      }     
     ]
   },
   {

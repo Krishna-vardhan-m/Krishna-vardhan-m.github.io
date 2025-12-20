@@ -234,30 +234,69 @@ async function displaySiteDetails(projectId, siteId) {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     // Ensure a tooltip element exists for hover info
     ensurePlotTooltip();
-    // Determine viewBox from site layout dimensions (fallback to previous defaults)
-    const vbWidth = parseFloat(site.siteLayoutWidth) || 593.91998;
-    const vbHeight = parseFloat(site.siteLayoutHeight) || 1047.04;
-    svg.setAttribute("viewBox", `0 0 ${vbWidth} ${vbHeight}`); // Adjust viewBox based on your plot coordinates
-    // Make the SVG fill the canvas so hit-testing aligns with visuals
+
+    // Determine viewBox from site layout dimensions (prefer JSON values, fallback to image intrinsic size)
+    let vbWidth = parseFloat(site.siteLayoutWidth);
+    let vbHeight = parseFloat(site.siteLayoutHeight);
+    const imgPath = site.siteLayout;
+
+    // If JSON doesn't provide complete sizes, load the image to read its natural dimensions
+    if ((!vbWidth || !vbHeight) && imgPath) {
+        try {
+            await new Promise((resolve, reject) => {
+                const probe = new Image();
+                probe.onload = () => { resolve(probe); };
+                probe.onerror = reject;
+                probe.src = imgPath;
+            }).then(imgProbe => {
+                vbWidth = vbWidth || imgProbe.naturalWidth;
+                vbHeight = vbHeight || imgProbe.naturalHeight;
+            }).catch(() => {
+                /* ignore and use defaults below */
+            });
+        } catch (e) {
+            // ignore
+        }
+    }
+
+    vbWidth = parseFloat(vbWidth) || 593.91998;
+    vbHeight = parseFloat(vbHeight) || 1047.04;
+
+    // Set viewBox so path coordinates align with the layout image's coordinate system
+    svg.setAttribute("viewBox", `0 0 ${vbWidth} ${vbHeight}`);
+    // Make the SVG scale to fill the canvas
     svg.setAttribute("width", "100%");
     svg.setAttribute("height", "100%");
+    svg.setAttribute("preserveAspectRatio", "xMinYMin meet"); // align origin so coordinates match top-left
     svg.style.display = 'block';
+
+    // Set canvas aspect-ratio to match the intrinsic layout so the SVG scales without adding vertical gaps
+    siteLayoutCanvas.style.aspectRatio = `${vbWidth} / ${vbHeight}`;
+    siteLayoutCanvas.style.alignItems = 'stretch';
+    siteLayoutCanvas.style.justifyContent = 'stretch';
+    siteLayoutCanvas.style.minHeight = '0';
+
+    // Reset canvas and append the SVG
+    siteLayoutCanvas.innerHTML = '';
     siteLayoutCanvas.appendChild(svg);
 
     // Disable pointer events while we build the SVG to avoid accidental clicks
     svg.style.pointerEvents = 'none';
 
-    // Add a base image if you want to show the roads/park under the clickable plots
-    // This requires accurately overlaying the image under the SVG.
-    // This is optional but can help visually.
-    
+    // Add a base background image so paths overlay precisely on top
     const img = document.createElementNS("http://www.w3.org/2000/svg", "image");
-    img.setAttributeNS('http://www.w3.org/1999/xlink', 'href', site.siteLayout); // Adjust path
+    img.setAttributeNS('http://www.w3.org/1999/xlink', 'href', imgPath || ''); // Adjust path
     img.setAttribute("x", "0");
     img.setAttribute("y", "0");
-    img.setAttribute("width", site.siteLayoutWidth); // Match viewBox width
-    img.setAttribute("height", site.siteLayoutHeight); // Match viewBox height
+    img.setAttribute("width", vbWidth); // Match viewBox width
+    img.setAttribute("height", vbHeight); // Match viewBox height
+    img.setAttribute("preserveAspectRatio", "xMinYMin meet");
     svg.appendChild(img);
+
+    // Create a dedicated group for plots so they scale and transform together
+    const plotsGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    plotsGroup.setAttribute('id', 'plots-group');
+    svg.appendChild(plotsGroup);
 
     
 
@@ -269,11 +308,9 @@ async function displaySiteDetails(projectId, siteId) {
     } else if (typeof site.plots === 'string' && site.plots.trim() !== '') {
         // Fetch and parse Excel/CSV/Google Sheet file (using xlsx library included in the page)
         try {
-           // document.getElementById('site-source-msg').textContent = `Loading plots from ${site.plots}...`;
             plots = await loadPlotsFromExcel(site.plots);
             // Cache parsed plots on the site object so we don't re-fetch repeatedly
             site.plots = plots;
-           // document.getElementById('site-source-msg').textContent = `Plot data loaded from ${site.plots}.`;
         } catch (err) {
             console.error('Failed to load plots:', err);
             // Helpful guidance when Google Sheets are not published/shared
@@ -287,10 +324,8 @@ async function displaySiteDetails(projectId, siteId) {
     } else if (typeof site.plots === 'object' && site.plots !== null && site.plots.googleSheet) {
         // Support site.plots being an object with googleSheet URL
         try {
-            //document.getElementById('site-source-msg').textContent = `Loading plots from Google Sheet...`;
             plots = await loadPlotsFromExcel(site.plots.googleSheet);
             site.plots = plots;
-            //document.getElementById('site-source-msg').textContent = `Plot data loaded from Google Sheet.`;
         } catch (err) {
             console.error('Failed to load plots from Google Sheet:', err);
             document.getElementById('site-source-msg').textContent = `Failed to load plots from Google Sheet: ${err.message}`;
@@ -302,7 +337,7 @@ async function displaySiteDetails(projectId, siteId) {
 
     plots.forEach(plot => {
         if (!plot.layoutCoordinates || plot.layoutCoordinates.toString().trim() === '') {
-            console.warn(`Skipping plot ${plot.plotId || plot.plotName || 'unknown'}: missing layoutCoordinates`);
+            console.warn(`Skipping plot ${plot.plotNumber || 'unknown'}: missing layoutCoordinates`);
             return; // skip plots that don't have SVG path data
         }
 
@@ -316,7 +351,7 @@ async function displaySiteDetails(projectId, siteId) {
         path.style.cursor = 'pointer';
         // Ensure the path can receive pointer events even if SVG had pointer-events toggled
         path.style.pointerEvents = 'auto';
-        path.dataset.plotId = plot.plotId;
+        path.dataset.plotNumber = plot.plotNumber; // use plotNumber as the canonical identifier
 
         // Add hover effect and tooltip
         path.addEventListener('mouseenter', (e) => {
@@ -325,6 +360,7 @@ async function displaySiteDetails(projectId, siteId) {
             const tt = document.getElementById('plot-tooltip');
             if (tt) {
                 const status = (plot.status || '').toString().charAt(0).toUpperCase() + (plot.status || '').toString().slice(1);
+                //tt.innerHTML = `<strong>${plot.plotNumber || 'Plot'}</strong><br>Status: ${status}<br>Area: ${plot.area || 'N/A'}`;
                 tt.classList.remove('hidden');
                 positionTooltip(e, tt);
             }
@@ -345,7 +381,9 @@ async function displaySiteDetails(projectId, siteId) {
             if (e.button !== 0) return;
             displayPlotDetails(plot);
         });
-        svg.appendChild(path);
+        // Add the plot shape to the grouped layer so all plots scale together
+        const plotsGroup = svg.getElementById ? svg.getElementById('plots-group') : svg.querySelector('#plots-group');
+        if (plotsGroup) plotsGroup.appendChild(path); else svg.appendChild(path);
 
         const bbox = path.getBBox();
         if (bbox.width > 10 && bbox.height > 10) { // Only add label if the plot is visible
@@ -354,9 +392,10 @@ async function displaySiteDetails(projectId, siteId) {
             text.setAttribute("y", bbox.y + bbox.height / 2 + 3);
             text.setAttribute("text-anchor", "middle");
             text.setAttribute("font-size", "10");
-            text.textContent = plot.plotName;
+            //text.textContent = plot.plotNumber || ''; // show plot number on layout
             text.style.pointerEvents = "none";
-            svg.appendChild(text);
+            const plotsGroupForText = svg.getElementById ? svg.getElementById('plots-group') : svg.querySelector('#plots-group');
+            if (plotsGroupForText) plotsGroupForText.appendChild(text); else svg.appendChild(text);
         }
     });
 
@@ -393,7 +432,7 @@ function displayPlotDetails(plot) {
     if (suppressPlotModal) return; // don't show modal while site is being loaded/rendered
     // Populate modal content with plot data and show centered popup
     const keyFeaturesArr = Array.isArray(plot.keyFeatures) ? plot.keyFeatures : (plot.keyFeatures ? plot.keyFeatures.toString().split(',').map(s => s.trim()).filter(Boolean) : []);
-    document.getElementById('modal-plot-name').textContent = plot.plotName || plot.plotId || 'Plot Details';
+    document.getElementById('modal-plot-name').textContent = plot.plotNumber || 'Plot Details';
     document.getElementById('modal-plot-area').textContent = plot.area || '';
     document.getElementById('modal-plot-direction').textContent = plot.direction || '';
     document.getElementById('modal-plot-keyfeatures').textContent = keyFeaturesArr.join(', ') || 'N/A';
@@ -447,7 +486,6 @@ async function loadPlotsFromExcel(url) {
     const gsCsv = convertGoogleSheetUrlToCsv(url);
     if (gsCsv) {
         url = gsCsv;
-        //document.getElementById('site-source-msg').textContent = `Loading plots from Google Sheet...`;
     }
 
     // Try fetching the file. If .xlsx isn't present, try .csv as a fallback.
@@ -496,9 +534,9 @@ async function loadPlotsFromExcel(url) {
     };
 
     return raw.map(row => {
-        const plotId = getFirst(row, ['PlotId', 'plotId', 'Plot ID', 'Plot', 'ID', 'plot_id']) || '';
-        const plotName = getFirst(row, ['PlotName', 'plotName', 'Plot Name', 'Name']) || plotId || '';
-        const layoutCoordinates = getFirst(row, ['LayoutCoordinates', 'layoutCoordinates', 'SVG Path', 'Path', 'layout', 'L']) || '';
+        // Prefer explicit Plot Number fields; fall back to common ID fields
+        const plotNumber = getFirst(row, ['PlotNumber','plotNumber','PlotId', 'plotId', 'Plot ID', 'Plot', 'ID', 'plot_id', 'Plot Number', 'Plot No', 'PlotNo']) || '';
+        const layoutCoordinates = getFirst(row, ['Layout Coordinates', 'layoutCoordinates', 'SVG Path', 'Path', 'layout', 'L']) || '';
         const area = getFirst(row, ['Area', 'area', 'Sq Ft', 'Area (sq ft)']) || '';
         const direction = getFirst(row, ['Direction', 'direction']) || '';
         const kf = getFirst(row, ['KeyFeatures', 'Key Features', 'keyFeatures', 'Key_Features']) || '';
@@ -519,7 +557,7 @@ async function loadPlotsFromExcel(url) {
         }
         const status = (getFirst(row, ['Status', 'status']) || 'available').toString();
 
-        return { plotId, plotName, layoutCoordinates, area, direction, keyFeatures, status };
+        return { plotNumber, layoutCoordinates, area, direction, keyFeatures, status }; 
     });
 }
 
