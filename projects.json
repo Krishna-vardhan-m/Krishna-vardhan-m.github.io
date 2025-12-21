@@ -2,8 +2,8 @@
   {
     "projectId": "projA",
     "projectName": "Lotus Avenue",
-    "projectLocation": { "lat": 17.4375, "lng": 78.4482 },
-    "projectImages": ["img/land.jpg", "img/plot1.png"],
+    "projectLocation": { "lat": 17.5099, "lng": 79.0473 },
+    "projectImages": ["img/land.jpg", "img/land.jpg"],
     "projectKeyPoints": [
       "24/7 Security",
       "Gated Community",
@@ -21,7 +21,7 @@
         "siteLayout": "img/Lotus Avenue.jpg",
         "siteLayoutWidth": "1200.000",
         "siteLayoutHeight": "1477.440",
-        "siteLocation": { "lat": 17.4380, "lng": 78.4490 },
+        "siteLocation": { "lat": 17.5099, "lng": 79.0473 },
         "plots": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQwmQu0NlBM6aCcnmMXk_wiQhJRWUzPggH0v4DIP6ajQFHi6SmqibyXED-GIoKAlwQRtEY7rpStQ2hg/pub?output=csv"
       }     
     ]
@@ -30,7 +30,7 @@
     "projectId": "projB",
     "projectName": "Royal Residency",
     "projectLocation": { "lat": 17.4000, "lng": 78.5000 },
-    "projectImages": ["img/land.jpg", "img/plot1.png", "img/land.jpg", "img/plot1.png"],
+    "projectImages": ["img/land.jpg", "img/land.jpg", "img/land.jpg", "img/land.jpg"],
     "projectKeyPoints": [
       "Clubhouse",
       "Swimming Pool",

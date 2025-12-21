@@ -75,14 +75,14 @@ nav ul li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #0000009b;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -96,6 +96,83 @@ nav ul li a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
     border-radius: 5px;
+}
+
+/* Mobile menu toggle and responsiveness */
+.menu-toggle {
+    display: none; /* shown only on small screens */
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+/* Prevent horizontal overflow (background showing on right) */
+body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 12px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* hidden until menu opened */
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: rgba(0,0,0,0.85);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        z-index: 1000; /* sit above most elements */
+        gap: 6px;
+    }
+
+    /* Support showing the menu when either body or nav has the open flag */
+    .nav-open nav ul,
+    nav.open ul {
+        display: flex !important;
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Make menu items easier to tap */
+    nav ul li a {
+        padding: 12px 18px;
+        color: #ffffff;
+    }
+
+    nav ul li {
+        margin: 8px 12px;
+    }
+
+    .dropdown-content {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        min-width: auto;
+        padding-left: 12px;
+        display: none; /* keep hidden until Projects clicked */
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    /* Make header position relative to anchor absolute menu */
+    header { position: relative; }
+
+    /* Footer spacing on small screens tighter */
+    .footer-content { margin-bottom: 8px; }
+    .footer-bottom { padding-top: 8px; }
 }
 
 main {
@@ -120,7 +197,7 @@ main {
 #content-container {
     padding: 20px;
     flex-grow: 1;
-    background-color: rgba(255, 255, 255, 0.85); /* Slightly more opaque white */
+    
 }
 
 #project-details, #site-details {
@@ -146,7 +223,7 @@ main {
 .project-images {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 100%;
 }
 
 .project-images img {
@@ -335,12 +412,60 @@ path:hover {
 
     .project-info, .site-layout-wrapper {
         flex-direction: column;
+        gap: 12px; /* reduce gap when stacked */
     }
 
+    /* Make project images fluid on mobile so there is no extra blank space above/below
+       when keypoints or other content stacks below the image */
     .project-images, #site-layout-canvas {
         flex: none;
         width: 100%;
     }
+
+    .project-images {
+        height: auto; /* remove fixed height on mobile */
+        min-height: 0;
+        position: relative; /* keep container flow */
+        margin: 0;
+    }
+
+    /* Only show the active image and let it flow vertically so the container shrinks to fit */
+    .project-images img {
+        position: static; /* flow with document */
+        width: 100%;
+        height: auto; /* preserve aspect ratio */
+        object-fit: cover; /* fill width while avoiding letterboxing */
+        border-radius: 4px;
+        display: none;
+    }
+
+    .project-images img.active {
+        display: block;
+    }
+
+    /* Keep carousel arrows visible on mobile and position them over the image */
+    .prev-btn, .next-btn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 5;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        padding: 0;
+    }
+
+    .prev-btn { left: 10px; }
+    .next-btn { right: 20px; }
+
     .main-section {
         padding: 1.5rem;
     }

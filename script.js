@@ -31,6 +31,62 @@ async function initMap() {
 // Global function to be called by Google Maps API script
 window.initMap = initMap;
 
+// Initialize header interactions (menu toggle, dropdown on touch)
+function initHeaderInteractions() {
+    // Avoid adding multiple global handlers if called repeatedly
+    if (window._headerInteractionsInit) return;
+    window._headerInteractionsInit = true;
+
+    // Use event delegation on document so elements inserted later are handled
+    document.addEventListener('click', (e) => {
+        // Menu toggle button
+        const menuBtn = e.target.closest && e.target.closest('#menu-toggle');
+        if (menuBtn) {
+            const navEl = document.querySelector('nav');
+            const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            // Toggle both body-level and nav-level classes to make CSS less fragile
+            document.body.classList.toggle('nav-open');
+            if (navEl) navEl.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', (!expanded).toString());
+            e.preventDefault();
+            return;
+        }
+
+        // Dropdown toggle (Projects)
+        const dropBtn = e.target.closest && e.target.closest('.dropdown .dropbtn');
+        if (dropBtn) {
+            const dropdown = dropBtn.closest('.dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('open');
+            }
+            e.preventDefault();
+            return;
+        }
+
+        // Click outside: close any open dropdowns and mobile nav if open
+        if (document.querySelectorAll) {
+            document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+        }
+        // Close mobile nav when clicking outside nav/menu toggle
+        const clickedInsideNav = !!e.target.closest && !!e.target.closest('nav');
+        const clickedToggle = !!e.target.closest && !!e.target.closest('#menu-toggle');
+        if (!clickedInsideNav && !clickedToggle && document.body.classList.contains('nav-open')) {
+            document.body.classList.remove('nav-open');
+            const mt = document.getElementById('menu-toggle'); if (mt) mt.setAttribute('aria-expanded','false');
+        }
+    });
+}
+
+// Try to initialize header interactions if header already present
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('header-placeholder') && document.getElementById('header-placeholder').innerHTML.trim() !== '') {
+        initHeaderInteractions();
+    }
+});
+
+// Expose globally so pages can call after they insert header fragment
+window.initHeaderInteractions = initHeaderInteractions;
+
 // Function to simulate fetching data
 async function fetchProjectsData() {
     // In a real application, you'd fetch this from your backend:
@@ -161,7 +217,13 @@ function displayProjectDetails(projectId) {
                 // Find the first site to calculate the route to.
                 if (project.sites && project.sites.length > 0) {
                     calculateAndDisplayRoute(route.location, project.sites[0].siteLocation);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Scroll to the map container so the route is visible to the user
+                    const mapEl = document.getElementById('map-container') || document.getElementById('map');
+                    if (mapEl && mapEl.scrollIntoView) {
+                        mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                 }
             };
             landmarkRoutesContainer.appendChild(btn);

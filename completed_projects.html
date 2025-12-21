@@ -55,6 +55,7 @@
             .then(response => response.text())
             .then(html => {
                 document.getElementById('header-placeholder').innerHTML = html;
+                if (window.initHeaderInteractions) window.initHeaderInteractions();
             });
 
         fetch('footer.html')
@@ -63,5 +64,6 @@
                 document.getElementById('footer-placeholder').innerHTML = html;
             });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

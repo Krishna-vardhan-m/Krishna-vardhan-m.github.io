@@ -12,11 +12,7 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <div id="map-container">
-            <div id="map"></div>
-            <div id="map-overlay">
-                </div>
-        </div>
+        
 
         <div id="content-container">
             <section id="project-selection">
@@ -41,7 +37,7 @@
                             </ul>
                         <h3>Famous Landmark Routes:</h3>
                         <div id="landmark-routes-container"></div>
-                        <br><br>
+                        <br>
                         <h3>Sites:</h3>
                         <ul id="site-list"> </ul>
                     </div>
@@ -74,6 +70,11 @@
                 </div>
             </section>
         </div>
+        <div id="map-container">
+            <div id="map"></div>
+            <div id="map-overlay">
+                </div>
+        </div>
     </main>
 
     <div id="footer-placeholder"></div>
@@ -83,6 +84,7 @@
             .then(response => response.text())
             .then(html => {
                 document.getElementById('header-placeholder').innerHTML = html;
+                if (window.initHeaderInteractions) window.initHeaderInteractions();
             });
 
         fetch('footer.html')

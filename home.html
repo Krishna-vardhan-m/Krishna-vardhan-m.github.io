@@ -29,7 +29,6 @@
         <section id="company-thumbnail">
             <h2>About Our Company</h2>
             <p style="color:#ffff" >Balaji Sai Lotus Farm is a leading real estate developer in Hyderabad, committed to delivering high-quality projects and exceptional customer service.</p>
-            <img src="img/company_thumbnail.jpg" alt="Company Thumbnail">
         </section>
     </main>
 
@@ -40,6 +39,7 @@
             .then(response => response.text())
             .then(html => {
                 document.getElementById('header-placeholder').innerHTML = html;
+                if (window.initHeaderInteractions) window.initHeaderInteractions();
             });
 
         fetch('footer.html')
@@ -48,5 +48,6 @@
                 document.getElementById('footer-placeholder').innerHTML = html;
             });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
