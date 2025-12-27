@@ -241,9 +241,26 @@ main {
 #project-details, #site-details {
     margin-top: 20px;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255,255,255,0.08); /* subtle light border */
     border-radius: 8px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.45); /* make it more translucent for backdrop-blur */
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* frosted glass effect */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Project keypoints: ensure headings and list items appear in white */
+.project-keypoints,
+.project-keypoints h3,
+.project-keypoints ul,
+.project-keypoints li {
+    color: #ffffff;
+}
+
+/* Make list items stand out slightly on dark background */
+.project-keypoints ul li {
+    margin: 6px 0;
+    line-height: 1.5;
 }
 
 .project-info {
@@ -320,6 +337,7 @@ main {
 
 #site-list li {
     background-color: #e9e9e9;
+    color: black;
     padding: 10px 15px;
     border-radius: 20px;
     cursor: pointer;
