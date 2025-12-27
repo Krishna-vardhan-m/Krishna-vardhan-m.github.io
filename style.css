@@ -53,19 +53,23 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-}
+    justify-content: center; /* center items horizontally */
+    align-items: center;
+    gap: 20px; /* consistent spacing between items */
+} 
 
 nav ul li {
     position: relative;
-    margin-left: 20px;
-}
+    margin-left: 0; /* spacing handled by gap on parent */
+} 
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     padding: 10px 15px;
     display: block;
-}
+    text-align: center; /* center label text */
+} 
 
 nav ul li a:hover {
     background-color: #E3842A; /* Sienna - a darker ochre/brown */
@@ -86,7 +90,7 @@ nav ul li a:hover {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: left;
+    text-align: center; /* center dropdown labels */
 }
 
 .dropdown-content a:hover {
@@ -151,16 +155,50 @@ body {
     }
 
     nav ul li {
-        margin: 8px 12px;
+        margin: 6px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Draw light ash separators between rows (inset, sharp-ended) */
+    nav ul li:not(:last-child) a::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background: #dcdcdc5d; /* light ash */
+        margin: 8px 18px 0; /* top and horizontal inset */
+        border-radius: 0; /* sharp ends */
+        pointer-events: none;
     }
 
     .dropdown-content {
         position: static;
-        background: transparent;
+        background: rgba(0,0,0,0.85);
         box-shadow: none;
         min-width: auto;
-        padding-left: 12px;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
         display: none; /* keep hidden until Projects clicked */
+    }
+
+    .dropdown-content a {
+        text-align: center;
+        width: 100%;
+        padding: 12px 18px;
+        display: block;
+        box-sizing: border-box; /* ensure padding doesn't cause overflow */
+    }
+
+    /* Also add separators for dropdown links */
+    .dropdown-content a:not(:last-child)::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background: #dcdcdc5d;
+        margin: 8px 18px 0;
+        border-radius: 0;
+        pointer-events: none;
     }
 
     .dropdown.open .dropdown-content {
