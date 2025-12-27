@@ -126,6 +126,21 @@ body {
         display: block;
     }
 
+    /* Keep background fixed on mobile by using a fixed pseudo-element */
+    .bg-home { background-image: none; }
+    .bg-home::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url('img/background_home.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1; /* behind content */
+        pointer-events: none;
+        will-change: transform;
+    }
+
     nav ul {
         display: none; /* hidden until menu opened */
         flex-direction: column;
