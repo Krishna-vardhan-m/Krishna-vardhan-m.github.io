@@ -675,7 +675,6 @@ footer {
 
 .project-card {
     background-color: rgba(255, 255, 255, 0.95); /* Lighter background for content */
-    border: 1px solid; /* Tan - earthy tone */
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
@@ -802,8 +801,7 @@ footer {
 
 .section-container-about {
     padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;    
     margin: 20px auto 2rem; /* center horizontally */
     max-width: 700px;
     width: calc(100% - 40px); /* leave horizontal padding on small screens */
