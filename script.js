@@ -124,7 +124,7 @@ function populateProjectDropdown() {
             directionsRenderer.setDirections({ routes: [] }); // Clear directions
             displayAllProjectMarkers();
             map.setCenter(HYDERABAD_CENTER);
-            map.setZoom(11);
+            map.setZoom(55);
         }
     });
 }
