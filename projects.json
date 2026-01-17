@@ -44,22 +44,14 @@
       {
         "siteId": "projB_site0",
         "siteName": "P1 - Lotus Gardens",
-        "siteLayout": "img/plot10.png",
-        "siteLayoutWidth": "594",
-        "siteLayoutHeight": "1047",
+        "siteLayout": "img/P4.png",
+        "siteLayoutWidth": "1464.960",
+        "siteLayoutHeight": "1116.480",
         "siteLocation": { "lat": 17.4012, "lng": 78.5012 },
         "famousLandmarksRoutes": [],
-        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
-      },
-      {
-        "siteId": "projB_site1",
-        "siteName": "P1 - Diamond Villas",
-        "siteLayout": "img/plot1.png",
-        "siteLayoutWidth": "593.91998",
-        "siteLayoutHeight": "1047.04",
-        "siteLocation": { "lat": 17.4010, "lng": 78.5010 },
-        "plots": "https://docs.google.com/spreadsheets/d/143-Qv38CUTv-oidkp10INSnVcGyJcsQG_OI1VKSq1Kk/edit?usp=sharing"
+        "plots": "https://docs.google.com/spreadsheets/d/1u8Dvad4XQErTmChRQOaH7dUYGSuTY_2jMTGy8r_9XCA/edit?usp=sharing"
       }
+      
     ]
   }
 ]
