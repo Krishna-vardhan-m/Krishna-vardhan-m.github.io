@@ -1,99 +1,438 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Projects - Hyderabad</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiM11oIWXLskaGLvAd2GMmuZ_eVYhB410&libraries=geometry,places&callback=initMap"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ongoing Projects — Balaji Sai Lotus Farm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiM11oIWXLskaGLvAd2GMmuZ_eVYhB410&libraries=geometry,places&callback=initMap"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="css/ongoingProjects.css">
 </head>
-<body class="bg-home">
-    <div id="header-placeholder"></div>
+<body>
 
-    <main>
-        
+<div id="header-placeholder"></div>
 
-        <div id="content-container">
-            <section id="project-selection">
-                <h2>Select a Project:</h2>
-                <select id="project-dropdown">
-                    <option value="">-- Select Project --</option>
-                    </select>
-            </section>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">Portfolio</div>
+  <h1>Ongoing <em>Projects</em></h1>
+  <div class="page-hero-divider"></div>
+</div>
 
-            <section id="project-details" style="display: none;">
-                <h2><span id="project-name"></span></h2>
-                <div class="project-info">
-                    <div class="project-images-container">
-                        <div class="project-images" id="project-images">
-                        </div>
-                        <button class="prev-btn">&lt;</button>
-                        <button class="next-btn">&gt;</button>
-                    </div>
-                    <div class="project-keypoints">
-                        <h3>Key Points:</h3>
-                        <ul id="project-keypoints-list">
-                            </ul>
-                        <h3>Famous Landmark Routes:</h3>
-                        <div id="landmark-routes-container"></div>
-                        <br>
-                        <h3>Sites:</h3>
-                        <ul id="site-list"> </ul>
-                    </div>
-                </div>
-                
-            </section>
+<main>
+  <div id="content-container">
 
-            <section id="site-details" style="display: none;">
-                <h2><span id="site-name"></span></h2>
-                <div id="site-source-msg" style="font-size:12px;color:#555;margin-top:4px;"></div>
-                <div class="site-layout-wrapper">
-                    <div id="site-layout-canvas">
-                    </div>
-                    <!-- Removed right-side plot details; using centered modal popup instead -->
-                </div>
-                <!-- Modal overlay for plot details (hidden by default) -->
-                <div id="modal-overlay" class="hidden" aria-hidden="true">
-                    <div id="plot-modal" role="dialog" aria-modal="true" aria-labelledby="modal-plot-name">
-                        <h3 id="modal-plot-name">Plot Details</h3>
-                        <div id="modal-plot-content">
-                            <p><strong>Area:</strong> <span id="modal-plot-area"></span></p>
-                            <p><strong>Direction:</strong> <span id="modal-plot-direction"></span></p>
-                            <p><strong>Key Features:</strong> <span id="modal-plot-keyfeatures"></span></p>
-                            <p><strong>Status:</strong> <span id="modal-plot-status"></span></p>
-                        </div>
-                        <div style="width:100%;display:flex;justify-content:center;margin-top:12px;">
-                            <button id="modal-close-btn" class="btn ">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <!-- Project Selection -->
+    <section id="project-selection">
+      <h2>Select a Project</h2>
+      <div class="select-wrap">
+        <select id="project-dropdown">
+          <option value="">— Choose a project —</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section id="project-details" style="display:none;">
+      <div class="status-badge active"><span class="pulse"></span>Active Project</div>
+      <h2><span id="project-name"></span></h2>
+      <div class="project-info">
+        <div class="project-images-container">
+          <div class="project-images" id="project-images"></div>
+          <button class="prev-btn">&#8249;</button>
+          <button class="next-btn">&#8250;</button>
         </div>
-        <div id="map-container">
-            <div id="map"></div>
-            <div id="map-overlay">
-                </div>
+        <div class="project-keypoints">
+          <h3>Key Highlights</h3>
+          <ul id="project-keypoints-list"></ul>
+          <h3>Routes from Landmarks</h3>
+          <div id="landmark-routes-container"></div>
+          <h3>Available Sites</h3>
+          <ul id="site-list"></ul>
         </div>
-    </main>
+      </div>
+    </section>
 
-    <div id="footer-placeholder"></div>
+    <!-- Site Details -->
+    <section id="site-details" style="display:none;">
+      <div class="content-divider"></div>
+      <h2><span id="site-name"></span></h2>
+      <div id="site-source-msg"></div>
+      <div class="plot-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#22c55e;opacity:0.8"></div>Available</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;opacity:0.8"></div>Pending</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444;opacity:0.8"></div>Booked</div>
+      </div>
+      <div class="site-layout-wrapper">
+        <div id="site-layout-canvas"></div>
+      </div>
+    </section>
 
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header-placeholder').innerHTML = html;
-                if (window.initHeaderInteractions) window.initHeaderInteractions();
-            });
+    <!-- Modal -->
+    <div id="modal-overlay" class="hidden" aria-hidden="true">
+      <div id="plot-modal" role="dialog" aria-modal="true">
+        <h3 id="modal-plot-name">Plot Details</h3>
+        <div id="modal-plot-content">
+          <p><strong>Area</strong><span id="modal-plot-area"></span></p>
+          <p><strong>Direction</strong><span id="modal-plot-direction"></span></p>
+          <p><strong>Key Features</strong><span id="modal-plot-keyfeatures"></span></p>
+          <p><strong>Status</strong><span id="modal-plot-status"></span></p>
+        </div>
+        <button id="modal-close-btn">Close</button>
+      </div>
+    </div>
 
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer-placeholder').innerHTML = html;
-            });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
+  </div><!-- /content-container -->
+
+  <!-- Map -->
+  <div id="map-container">
+    <div class="map-label">📍 Project Location</div>
+    <div id="map"></div>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+let map, projectsData = [], markers = [], infoWindow, directionsService, directionsRenderer;
+let suppressPlotModal = false;
+const HYDERABAD_CENTER = { lat: 17.3850, lng: 78.4867 };
+
+async function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: HYDERABAD_CENTER, zoom: 11,
+    styles: [
+      { elementType: 'geometry', stylers: [{ color: '#1a1f1a' }] },
+      { elementType: 'labels.text.stroke', stylers: [{ color: '#0a0f0a' }] },
+      { elementType: 'labels.text.fill', stylers: [{ color: '#8a8a8a' }] },
+      { featureType: 'road', elementType: 'geometry', stylers: [{ color: '#2d3d2d' }] },
+      { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#0d1f2d' }] },
+      { featureType: 'poi', stylers: [{ visibility: 'off' }] }
+    ]
+  });
+  infoWindow = new google.maps.InfoWindow();
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer({ map, polylineOptions: { strokeColor: '#E3842A', strokeWeight: 4 } });
+  projectsData = await fetchProjectsData();
+  populateProjectDropdown();
+  displayAllProjectMarkers();
+}
+window.initMap = initMap;
+
+async function fetchProjectsData() {
+  const r = await fetch('projects.json');
+  if (!r.ok) throw new Error(`HTTP error: ${r.status}`);
+  return r.json();
+}
+
+function populateProjectDropdown() {
+  const dd = document.getElementById('project-dropdown');
+  projectsData.forEach(p => {
+    const o = document.createElement('option');
+    o.value = p.projectId; o.textContent = p.projectName;
+    dd.appendChild(o);
+  });
+  dd.addEventListener('change', e => {
+    if (e.target.value) displayProjectDetails(e.target.value);
+    else {
+      document.getElementById('project-details').style.display = 'none';
+      document.getElementById('site-details').style.display = 'none';
+      directionsRenderer.setDirections({ routes: [] });
+      displayAllProjectMarkers();
+      map.setCenter(HYDERABAD_CENTER); map.setZoom(11);
+    }
+  });
+}
+
+function displayAllProjectMarkers() {
+  clearMarkers();
+  projectsData.forEach(p => {
+    const m = new google.maps.Marker({ position: p.projectLocation, map, title: p.projectName,
+      icon: { path: google.maps.SymbolPath.CIRCLE, scale: 10, fillColor: '#E3842A', fillOpacity: 1, strokeColor: '#F4C430', strokeWeight: 2 }
+    });
+    m.addListener('click', () => {
+      infoWindow.setContent(`<div style="font-family:Raleway,sans-serif;padding:4px 8px;color:#1a1f1a"><b>${p.projectName}</b></div>`);
+      infoWindow.open(map, m);
+      document.getElementById('project-dropdown').value = p.projectId;
+      displayProjectDetails(p.projectId);
+    });
+    markers.push(m);
+  });
+}
+
+function clearMarkers() { markers.forEach(m => m.setMap(null)); markers = []; }
+
+function displayProjectDetails(projectId) {
+  const p = projectsData.find(x => x.projectId === projectId);
+  if (!p) return;
+  document.getElementById('site-details').style.display = 'none';
+  directionsRenderer.setDirections({ routes: [] });
+  document.getElementById('project-name').textContent = p.projectName;
+
+  const imgDiv = document.getElementById('project-images');
+  imgDiv.innerHTML = '';
+  p.projectImages.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src; img.alt = p.projectName;
+    imgDiv.appendChild(img);
+  });
+  let ci = 0;
+  const imgs = imgDiv.querySelectorAll('img');
+  const showImg = i => imgs.forEach((img, j) => img.classList.toggle('active', i === j));
+  document.querySelector('.prev-btn').onclick = () => { ci = ci > 0 ? ci-1 : imgs.length-1; showImg(ci); };
+  document.querySelector('.next-btn').onclick = () => { ci = ci < imgs.length-1 ? ci+1 : 0; showImg(ci); };
+  showImg(0);
+
+  const kpList = document.getElementById('project-keypoints-list');
+  kpList.innerHTML = '';
+  p.projectKeyPoints.forEach(pt => {
+    const li = document.createElement('li'); li.textContent = pt; kpList.appendChild(li);
+  });
+
+  const lrCont = document.getElementById('landmark-routes-container');
+  lrCont.innerHTML = '';
+  (p.famousLandmarksRoutes || []).forEach(r => {
+    const btn = document.createElement('button');
+    btn.textContent = r.name; btn.className = 'landmark-route-btn';
+    btn.onclick = () => { if (p.sites && p.sites.length > 0) calculateAndDisplayRoute(r.location, p.sites[0].siteLocation); };
+    lrCont.appendChild(btn);
+  });
+
+  const siteList = document.getElementById('site-list');
+  siteList.innerHTML = '';
+  p.sites.forEach(s => {
+    const li = document.createElement('li');
+    li.textContent = s.siteName; li.dataset.siteId = s.siteId;
+    li.addEventListener('click', () => {
+      document.querySelectorAll('#site-list li').forEach(x => x.classList.remove('active'));
+      li.classList.add('active');
+      displaySiteDetails(p.projectId, s.siteId).catch(err => {
+        document.getElementById('site-source-msg').textContent = 'Error loading site: ' + err.message;
+      });
+    });
+    siteList.appendChild(li);
+  });
+
+  document.getElementById('project-details').style.display = 'block';
+  clearMarkers();
+  const bounds = new google.maps.LatLngBounds();
+  p.sites.forEach(s => {
+    const m = new google.maps.Marker({ position: s.siteLocation, map, title: s.siteName,
+      icon: { path: google.maps.SymbolPath.CIRCLE, scale: 8, fillColor: '#F4C430', fillOpacity: 1, strokeColor: '#E3842A', strokeWeight: 2 }
+    });
+    m.addListener('click', () => {
+      infoWindow.setContent(`<div style="font-family:Raleway,sans-serif;padding:4px 8px;color:#1a1f1a"><b>${s.siteName}</b></div>`);
+      infoWindow.open(map, m);
+      displaySiteDetails(p.projectId, s.siteId);
+    });
+    markers.push(m); bounds.extend(s.siteLocation);
+  });
+  map.fitBounds(bounds);
+}
+
+async function displaySiteDetails(projectId, siteId) {
+  const p = projectsData.find(x => x.projectId === projectId);
+  const s = p && p.sites.find(x => x.siteId === siteId);
+  if (!s) return;
+  suppressPlotModal = true; hidePlotModal();
+  document.getElementById('site-name').textContent = s.siteName;
+  document.getElementById('site-details').style.display = 'block';
+  document.getElementById('site-source-msg').textContent = '';
+
+  const canvas = document.getElementById('site-layout-canvas');
+  canvas.innerHTML = '';
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  ensurePlotTooltip();
+
+  let vbW = parseFloat(s.siteLayoutWidth), vbH = parseFloat(s.siteLayoutHeight);
+  if ((!vbW || !vbH) && s.siteLayout) {
+    await new Promise(res => { const i = new Image(); i.onload = () => { vbW = vbW || i.naturalWidth; vbH = vbH || i.naturalHeight; res(); }; i.onerror = res; i.src = s.siteLayout; });
+  }
+  vbW = vbW || 593.92; vbH = vbH || 1047.04;
+  svg.setAttribute("viewBox", `0 0 ${vbW} ${vbH}`);
+  svg.setAttribute("width", "100%"); svg.setAttribute("height", "100%");
+  svg.setAttribute("preserveAspectRatio", "xMinYMin meet");
+  svg.style.display = 'block'; svg.style.pointerEvents = 'none';
+  canvas.style.aspectRatio = `${vbW} / ${vbH}`;
+  canvas.style.minHeight = '0';
+  canvas.appendChild(svg);
+
+  const bgImg = document.createElementNS("http://www.w3.org/2000/svg", "image");
+  bgImg.setAttributeNS('http://www.w3.org/1999/xlink', 'href', s.siteLayout || '');
+  bgImg.setAttribute("x","0"); bgImg.setAttribute("y","0");
+  bgImg.setAttribute("width", vbW); bgImg.setAttribute("height", vbH);
+  bgImg.setAttribute("preserveAspectRatio","xMinYMin meet");
+  svg.appendChild(bgImg);
+
+  const plotsGroup = document.createElementNS("http://www.w3.org/2000/svg","g");
+  plotsGroup.setAttribute('id','plots-group');
+  svg.appendChild(plotsGroup);
+
+  let plots = [];
+  if (Array.isArray(s.plots)) plots = s.plots;
+  else if (typeof s.plots === 'string' && s.plots.trim()) {
+    try { plots = await loadPlotsFromExcel(s.plots); s.plots = plots; }
+    catch(e) { document.getElementById('site-source-msg').textContent = 'Failed to load plots: ' + e.message; plots = []; }
+  }
+
+  plots.forEach(plot => {
+    if (!plot.layoutCoordinates?.toString().trim()) return;
+    const path = document.createElementNS("http://www.w3.org/2000/svg","path");
+    path.setAttribute("d", plot.layoutCoordinates);
+    path.setAttribute("stroke","black"); path.setAttribute("stroke-width","1");
+    const sc = (plot.status||'available').toString().toLowerCase().replace(/\s+/g,'-');
+    path.classList.add(`plot-${sc}`);
+    path.style.cursor = 'pointer'; path.style.pointerEvents = 'auto';
+    path.dataset.plotNumber = plot.plotNumber;
+    path.addEventListener('mouseenter', e => {
+      path.style.strokeWidth = "2";
+      const tt = document.getElementById('plot-tooltip');
+      if (tt) { tt.innerHTML = `<strong style="color:var(--saffron)">${plot.plotNumber||'Plot'}</strong><br>Status: ${plot.status||'N/A'}<br>Area: ${plot.area||'N/A'}`; tt.classList.remove('hidden'); positionTooltip(e,tt); }
+    });
+    path.addEventListener('mousemove', e => { const tt = document.getElementById('plot-tooltip'); if(tt&&!tt.classList.contains('hidden')) positionTooltip(e,tt); });
+    path.addEventListener('mouseleave', () => { path.style.strokeWidth = "0.5"; const tt = document.getElementById('plot-tooltip'); if(tt) tt.classList.add('hidden'); });
+    path.addEventListener('click', e => { if (e.button!==0) return; displayPlotDetails(plot); });
+    plotsGroup.appendChild(path);
+    const bb = path.getBBox();
+    if (bb.width > 10 && bb.height > 10) {
+      const txt = document.createElementNS("http://www.w3.org/2000/svg","text");
+      txt.setAttribute("x", bb.x + bb.width/2); txt.setAttribute("y", bb.y + bb.height/2 + 3);
+      txt.setAttribute("text-anchor","middle"); txt.setAttribute("font-size","10");
+      txt.textContent = plot.plotNumber || ''; txt.style.pointerEvents = 'none';
+      plotsGroup.appendChild(txt);
+    }
+  });
+
+  directionsRenderer.setDirections({ routes: [] });
+  map.setCenter(s.siteLocation); map.setZoom(15);
+  setTimeout(() => { suppressPlotModal = false; svg.style.pointerEvents = 'auto'; }, 250);
+}
+
+function displayPlotDetails(plot) {
+  if (suppressPlotModal) return;
+  const kf = Array.isArray(plot.keyFeatures) ? plot.keyFeatures : (plot.keyFeatures ? plot.keyFeatures.toString().split(',').map(s=>s.trim()).filter(Boolean) : []);
+  document.getElementById('modal-plot-name').textContent = plot.plotNumber || 'Plot Details';
+  document.getElementById('modal-plot-area').textContent = plot.area || '—';
+  document.getElementById('modal-plot-direction').textContent = plot.direction || '—';
+  document.getElementById('modal-plot-keyfeatures').textContent = kf.join(', ') || 'N/A';
+  const statusStr = (plot.status||'available').toString().toLowerCase().replace(/\s+/g,'');
+  const statusCap = statusStr.charAt(0).toUpperCase() + statusStr.slice(1);
+  document.getElementById('modal-plot-status').innerHTML = `<span class="modal-status-badge ${statusStr}"><span class="status-dot"></span>${statusCap}</span>`;
+  const ov = document.getElementById('modal-overlay');
+  const tt = document.getElementById('plot-tooltip'); if(tt) tt.classList.add('hidden');
+  ov.classList.remove('hidden'); ov.removeAttribute('aria-hidden');
+}
+
+function hidePlotModal() {
+  const ov = document.getElementById('modal-overlay');
+  if (ov) { ov.classList.add('hidden'); ov.setAttribute('aria-hidden','true'); }
+}
+
+function ensurePlotTooltip() {
+  if (!document.getElementById('plot-tooltip')) {
+    const t = document.createElement('div'); t.id='plot-tooltip'; t.className='hidden';
+    document.body.appendChild(t);
+  }
+}
+
+function positionTooltip(e, tt) {
+  let x = (e.pageX||e.clientX+window.scrollX)+12, y = (e.pageY||e.clientY+window.scrollY)+12;
+  tt.style.left = x+'px'; tt.style.top = y+'px'; tt.style.display='block';
+  const r = tt.getBoundingClientRect();
+  if (r.right > window.innerWidth) tt.style.left = Math.max(8, x-r.width-12)+'px';
+  if (r.bottom > window.innerHeight) tt.style.top = Math.max(8, y-r.height-12)+'px';
+}
+
+async function loadPlotsFromExcel(url) {
+  const csv = convertGoogleSheetUrlToCsv(url);
+  if (csv) url = csv;
+  let res = await fetch(url);
+  if (!res.ok && url.toLowerCase().endsWith('.xlsx')) { const u2 = url.replace(/\.xlsx$/i,'.csv'); res = await fetch(u2); if(res.ok) url=u2; }
+  if (!res.ok) throw new Error(`Fetch failed (${res.status})`);
+  const ct = res.headers.get('content-type')||'';
+  let raw;
+  if (ct.includes('text/csv')||url.toLowerCase().endsWith('.csv')) {
+    const text = await res.text();
+    const wb = XLSX.read(text, {type:'string'});
+    raw = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {defval:''});
+  } else {
+    const wb = XLSX.read(new Uint8Array(await res.arrayBuffer()),{type:'array'});
+    raw = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:''});
+  }
+  const get = (row,keys) => { for(const k of keys) if(k in row && row[k]!=='') return row[k]; return ''; };
+  return raw.map(row => {
+    const plotNumber = get(row,['PlotNumber','plotNumber','PlotId','plotId','Plot ID','Plot','ID','Plot Number','Plot No','PlotNo'])||'';
+    const layoutCoordinates = get(row,['Layout Coordinates','layoutCoordinates','SVG Path','Path','layout','L'])||'';
+    const area = get(row,['Area','area','Sq Ft','Area (sq ft)'])||'';
+    const direction = get(row,['Direction','direction'])||'';
+    const kf = get(row,['KeyFeatures','Key Features','keyFeatures','Key_Features'])||'';
+    let keyFeatures = [];
+    if (kf) { try { const p=JSON.parse(kf); keyFeatures=Array.isArray(p)?p:[p]; } catch { keyFeatures=kf.toString().replace(/^[\[\]"]+|[\[\]"]+$/g,'').split(',').map(s=>s.trim()).filter(Boolean); } }
+    const status = (get(row,['Status','status'])||'available').toString();
+    return { plotNumber, layoutCoordinates, area, direction, keyFeatures, status };
+  });
+}
+
+function convertGoogleSheetUrlToCsv(url) {
+  if (!url) return null;
+  const u = url.trim();
+  if (u.includes('export?format=csv')||u.includes('output=csv')) return u;
+  let m = u.match(/docs\.google\.com\/spreadsheets\/d\/([a-zA-Z0-9-_]+)(?:\/.*)?(?:#gid=(\d+))?/);
+  if (m) return `https://docs.google.com/spreadsheets/d/${m[1]}/export?format=csv&gid=${m[2]||'0'}`;
+  m = u.match(/docs\.google\.com\/spreadsheets\/d\/e\/([a-zA-Z0-9-_]+)\/pubhtml(?:.*?gid=(\d+))?/);
+  if (m) return `https://docs.google.com/spreadsheets/d/e/${m[1]}/pub?gid=${m[2]||'0'}&single=true&output=csv`;
+  return null;
+}
+
+function calculateAndDisplayRoute(origin, dest) {
+  directionsService.route({ origin, destination: dest, travelMode: google.maps.TravelMode.DRIVING }, (res, status) => {
+    if (status === 'OK') directionsRenderer.setDirections(res);
+    else console.warn('Directions failed:', status);
+  });
+}
+
+// Modal close bindings
+document.getElementById('modal-close-btn').addEventListener('click', hidePlotModal);
+document.getElementById('modal-overlay').addEventListener('click', e => { if(e.target===document.getElementById('modal-overlay')) hidePlotModal(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') hidePlotModal(); });
+
+// ─── LOAD HEADER & FOOTER ───
+async function loadHeaderFooter() {
+  try {
+    const [hRes, fRes] = await Promise.all([fetch('header.html'), fetch('footer.html')]);
+    document.getElementById('header-placeholder').innerHTML = await hRes.text();
+    document.getElementById('footer-placeholder').innerHTML = await fRes.text();
+    // Hamburger
+    const hamburger = document.getElementById('nav-hamburger');
+    const navLinksList = document.querySelector('.nav-links');
+    if (hamburger && navLinksList) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        navLinksList.classList.toggle('mobile-open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+      navLinksList.querySelectorAll('a:not(.nav-dropdown-trigger)').forEach(a => {
+        a.addEventListener('click', () => {
+          if (window.innerWidth <= 900) {
+            hamburger.classList.remove('open');
+            navLinksList.classList.remove('mobile-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+    // Dropdown toggle on mobile
+    document.querySelectorAll('.nav-dropdown-trigger').forEach(t => {
+      t.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) { e.preventDefault(); this.closest('.nav-dropdown').classList.toggle('open'); }
+      });
+    });
+  } catch (err) { console.error('Failed to load header/footer:', err); }
+}
+loadHeaderFooter();
+
+</script>
 </body>
 </html>

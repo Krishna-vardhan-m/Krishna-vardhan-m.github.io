@@ -1,53 +1,547 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Balaji Sai Lotus Farm</title>
-    <link rel="stylesheet" href="style.css">
-   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balaji Sai Lotus Farm — Smart Investment for Golden Future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
 </head>
-<body class="text-gray-800 min-h-screen flex flex-col bg-home">
-    <div id="header-placeholder"></div>
+<body>
 
-    <main>
-        <section id="home-hero">
-            <div class="hero-content">
-                <h1>Welcome to Balaji Sai Lotus Farm</h1>
-                <p>Smart Investment for Golden Future</p>
-            </div>
-        </section>
-        <div class="swami-container">
-        <section id="vivekananda-section">
-            <div class="vivekananda-circle">
-                <img src="img/vivekananda.jpg" alt="Swami Vivekananda">
-            </div>
-            <h2>"Arise, awake, and stop not till the goal is reached."</h2>
-            <p>- Swami Vivekananda</p>
-        </section>
+<div id="header-placeholder"></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- Lotus petals -->
+  <div id="petals-container"></div>
+
+  <div class="hero-content">
+    <div class="hero-tagline-top">Hyderabad's Finest Open Plot Development</div>
+    <h1 class="hero-title">
+      Balaji Sai
+      <em>Lotus Farm</em>
+    </h1>
+    <p class="hero-sub">Smart Investment for a Golden Future</p>
+    <div class="hero-btns">
+      <a href="ongoingProjects.html" class="btn-primary">Explore Projects</a>
+      <a href="#contact" class="btn-outline">Book a Site Visit</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div id="stats-band">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-number"><span class="counter" data-target="500">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Plots Delivered</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.1s">
+      <div class="stat-number"><span class="counter" data-target="12">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Years of Trust</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.2s">
+      <div class="stat-number"><span class="counter" data-target="300">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Happy Families</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.3s">
+      <div class="stat-number"><span class="counter" data-target="50">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Acres Developed</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-text reveal-left">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-heading">Building <em>Dreams</em> on Sacred Ground</h2>
+      <div class="section-divider"></div>
+      <div class="section-body">
+        <p>Founded on the principles of <span class="highlight">transparency, trust,</span> and timely delivery, Balaji Sai Lotus Farm is a premier open-plot developer based in <span class="highlight">Hyderabad, Telangana</span>.</p>
+        <p>We believe land is not just an asset — it's a legacy. Every plot we develop is thoughtfully planned, legally clear, and infrastructure-ready, so your investment grows as naturally as a lotus from still water.</p>
+      </div>
+      <div class="values-list">
+        <div class="value-item">
+          <div class="value-icon">🛡️</div>
+          <div class="value-text">
+            <strong>100% Legal Clarity</strong>
+            <p>DTCP / RERA approved layouts. Clear title, zero disputes.</p>
+          </div>
         </div>
-        <section id="company-thumbnail">
-            <h2>About Our Company</h2>
-            <p style="color:#ffff" >Balaji Sai Lotus Farm is a leading real estate developer in Hyderabad, committed to delivering high-quality projects and exceptional customer service.</p>
-        </section>
-    </main>
+        <div class="value-item">
+          <div class="value-icon">🌿</div>
+          <div class="value-text">
+            <strong>Sustainable Development</strong>
+            <p>Green belts, wide roads, and tree-lined avenues in every project.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-icon">🤝</div>
+          <div class="value-text">
+            <strong>Personal Service</strong>
+            <p>From first enquiry to registration — we're with you every step.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal-right">
+      <div class="about-gold-line"></div>
+      <div class="about-img-wrap">
+        <img src="img/land.jpg" alt="Balaji Sai Land">
+        <div class="about-img-badge">
+          <strong>2012</strong>
+          <span>Est. Year</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div id="footer-placeholder"></div>
+<!-- WHY INVEST -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-heading">Three Pillars of Our <em>Promise</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" style="transition-delay:0.1s">
+        <div class="why-card-num">01</div>
+        <div class="why-icon">📍</div>
+        <h3>Prime Locations</h3>
+        <p>Every project is handpicked for maximum appreciation — close to Hyderabad's growth corridors, highways, and upcoming infrastructure.</p>
+        <ul>
+          <li>Near Hyderabad Ring Road</li>
+          <li>Excellent road connectivity</li>
+          <li>Close to IT hubs & schools</li>
+          <li>Proximity to key landmarks</li>
+        </ul>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.2s">
+        <div class="why-card-num">02</div>
+        <div class="why-icon">🔐</div>
+        <h3>Security & Community</h3>
+        <p>Gated communities with 24/7 security mean peace of mind whether you live here or simply invest for the future.</p>
+        <ul>
+          <li>24/7 trained security personnel</li>
+          <li>CCTV surveillance throughout</li>
+          <li>Gated compound walls</li>
+          <li>Dedicated security checkpoint</li>
+        </ul>
+      </div>
+      <div class="why-card reveal" style="transition-delay:0.3s">
+        <div class="why-card-num">03</div>
+        <div class="why-icon">📈</div>
+        <h3>High ROI Potential</h3>
+        <p>Open plots in Hyderabad's expanding outskirts have consistently delivered 3–5× returns over a 5-year horizon.</p>
+        <ul>
+          <li>Consistent appreciation record</li>
+          <li>Low entry price points</li>
+          <li>Flexible payment plans</li>
+          <li>Resale assistance provided</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('header-placeholder').innerHTML = html;
-                if (window.initHeaderInteractions) window.initHeaderInteractions();
-            });
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-header reveal">
+    <div class="section-label">Our Portfolio</div>
+    <h2 class="section-heading">Signature <em>Projects</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card reveal-left" onclick="location.href='ongoingProjects.html'" style="cursor:pointer;">
+      <img src="img/Lotus Avenue.jpg" alt="Lotus Avenue">
+      <div class="project-card-overlay">
+        <div class="project-badge">Active</div>
+        <h3>Lotus Avenue</h3>
+        <div class="project-location">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5c-.83 0-1.5-.67-1.5-1.5S5.17 3.5 6 3.5s1.5.67 1.5 1.5S6.83 6.5 6 6.5z" fill="rgba(255,255,255,0.6)"/></svg>
+          Suryapet District, Telangana
+        </div>
+        <div class="project-features">
+          <span class="feature-chip">Gated Community</span>
+          <span class="feature-chip">24/7 Security</span>
+          <span class="feature-chip">Near Hitech City</span>
+          <span class="feature-chip">Excellent Roads</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+    <div class="project-card reveal-right" onclick="location.href='completed_projects.html'" style="cursor:pointer;">
+      <img src="img/P4.png" alt="Royal Residency" style="object-fit: contain; background: #111;">
+      <div class="project-card-overlay">
+        <div class="project-badge" style="background: var(--green)">New Launch</div>
+        <h3>Royal Residency</h3>
+        <div class="project-location">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5c-.83 0-1.5-.67-1.5-1.5S5.17 3.5 6 3.5s1.5.67 1.5 1.5S6.83 6.5 6 6.5z" fill="rgba(255,255,255,0.6)"/></svg>
+          Hyderabad, Telangana
+        </div>
+        <div class="project-features">
+          <span class="feature-chip">Clubhouse</span>
+          <span class="feature-chip">Swimming Pool</span>
+          <span class="feature-chip">Financial District</span>
+          <span class="feature-chip">Premium Plots</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+  </div>
+</section>
 
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer-placeholder').innerHTML = html;
-            });
-    </script>
-    <script src="script.js"></script>
+<!-- LAND PROMISE / AMENITIES -->
+<section id="promise">
+  <div class="promise-inner">
+    <div class="promise-visual reveal-left">
+      <div class="promise-glow"></div>
+      <img src="img/grass.jpg" alt="Green Land" class="promise-plot-img">
+    </div>
+    <div class="promise-text reveal-right">
+      <div class="section-label">What We Deliver</div>
+      <h2 class="section-heading">Land Prepared for <em>Life</em></h2>
+      <div class="section-divider"></div>
+      <p class="section-body">Every plot handed over by Balaji Sai Lotus Farm comes with complete infrastructure in place — so you can build your dream the day you register.</p>
+      <div class="amenities-grid">
+        <div class="amenity-item">
+          <span class="amenity-icon">🛣️</span>
+          <span class="amenity-text">BT Roads</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">💧</span>
+          <span class="amenity-text">Water Supply</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">⚡</span>
+          <span class="amenity-text">Underground Electric</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">🌳</span>
+          <span class="amenity-text">Avenue Plantation</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">🔦</span>
+          <span class="amenity-text">Street Lighting</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">🏞️</span>
+          <span class="amenity-text">Park & Open Space</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">🚪</span>
+          <span class="amenity-text">Gated Entrance</span>
+        </div>
+        <div class="amenity-item">
+          <span class="amenity-icon">🗺️</span>
+          <span class="amenity-text">Vastu-Friendly Plots</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIVEKANANDA / VISION -->
+<section id="vision">
+  <div class="vision-bg"></div>
+  <div class="vision-overlay"></div>
+  <div class="vision-content">
+    <div class="vision-portrait reveal">
+      <img src="img/vivekananda.jpg" alt="Swami Vivekananda">
+    </div>
+    <div class="reveal-right">
+      <div class="section-label">Our Inspiration</div>
+      <blockquote class="vision-quote">
+        Arise, awake, and stop not till the goal is reached.
+      </blockquote>
+      <div class="vision-attribution">— Swami Vivekananda</div>
+      <p class="vision-mission">
+        Guided by this timeless wisdom, Balaji Sai Lotus Farm never rests until every customer's dream of owning land is fulfilled. We see land ownership not merely as a transaction — but as the foundation of a family's future security, dignity, and prosperity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-form-wrap reveal-left">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-heading">Book a Free <em>Site Visit</em></h2>
+      <div class="section-divider"></div>
+      <form class="contact-form" id="enquiry-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="enq-name" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="enq-phone" placeholder="+91 00000 00000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="enq-email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Interested In</label>
+          <select id="enq-project">
+            <option value="">Select a project</option>
+            <option>Lotus Avenue</option>
+            <option>Royal Residency</option>
+            <option>Future Projects</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="appt-date" min="">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select id="appt-time">
+              <option value="">Select time slot</option>
+              <option>10:00 AM – 11:00 AM</option>
+              <option>11:00 AM – 12:00 PM</option>
+              <option>12:00 PM – 1:00 PM</option>
+              <option>2:00 PM – 3:00 PM</option>
+              <option>3:00 PM – 4:00 PM</option>
+              <option>4:00 PM – 5:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Appointment Type</label>
+          <div class="appt-type-group">
+            <label class="appt-type-option">
+              <input type="radio" name="appt_type" value="site_visit" checked>
+              <span class="appt-type-btn">🏗️ Site Visit</span>
+            </label>
+            <label class="appt-type-option">
+              <input type="radio" name="appt_type" value="phone_call">
+              <span class="appt-type-btn">📞 Phone Call</span>
+            </label>
+            <label class="appt-type-option">
+              <input type="radio" name="appt_type" value="video_call">
+              <span class="appt-type-btn">🎥 Video Call</span>
+            </label>
+            <label class="appt-type-option">
+              <input type="radio" name="appt_type" value="office_visit">
+              <span class="appt-type-btn">🏢 Office Visit</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="enq-message" placeholder="Any specific requirements or questions?"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Book Appointment →</button>
+      </form>
+      <div class="form-success" id="form-success">
+        <h3>✦ Thank You!</h3>
+        <p>We've received your enquiry. Our team will contact you within 24 hours to schedule your site visit.</p>
+      </div>
+    </div>
+    <div class="contact-info-wrap reveal-right">
+      <div class="section-label">Contact Details</div>
+      <h2 class="section-heading">We're Here to <em>Help</em></h2>
+      <div class="section-divider"></div>
+      <p class="section-body">Ready to take the first step toward owning your piece of Telangana's future? Reach out and we'll guide you through every detail.</p>
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-text">
+            <strong>Phone</strong>
+            <p><a href="tel:+919030669903">+91 90306 69903</a></p>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📧</div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            <p><a href="mailto:info@balajisailotusfarm.com">info@balajisailotusfarm.com</a></p>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text">
+            <strong>Office</strong>
+            <p>Srinivasa Homes, Peerzadaguda,<br>Uppal, Hyderabad – 500092<br><small style="color:rgba(255,255,255,0.5)">Landmark: Above Axis Bank</small></p>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-text">
+            <strong>Working Hours</strong>
+            <p>Tue–Sun: 10:00 AM – 5:00 PM</p>
+            <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Monday: Closed</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://maps.app.goo.gl/HstFbMChNUhuHHhP8" target="_blank" class="contact-map-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+        View on Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+// ─── HERO PARALLAX ───
+const heroBg = document.getElementById('hero-bg');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y < window.innerHeight) heroBg.style.transform = `scale(1.1) translateY(${y * 0.25}px)`;
+}, { passive: true });
+
+// ─── FLOATING PETALS ───
+const container = document.getElementById('petals-container');
+const petalColors = ['rgba(244,196,48,0.5)', 'rgba(227,132,42,0.4)', 'rgba(255,255,255,0.3)', 'rgba(30,107,30,0.4)'];
+function createPetal() {
+  const el = document.createElement('div');
+  el.classList.add('lotus-petal');
+  const size = Math.random() * 12 + 6, x = Math.random() * 100;
+  const delay = Math.random() * 6, duration = Math.random() * 8 + 6;
+  const color = petalColors[Math.floor(Math.random() * petalColors.length)];
+  el.style.cssText = `left:${x}%;bottom:-20px;width:${size}px;height:${size*1.6}px;background:${color};border-radius:50% 0 50% 0;animation-delay:${delay}s;animation-duration:${duration}s;`;
+  container.appendChild(el);
+  setTimeout(() => el.remove(), (delay + duration) * 1000);
+}
+setInterval(createPetal, 600);
+for (let i = 0; i < 8; i++) createPetal();
+
+// ─── INTERSECTION OBSERVER ───
+const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// ─── COUNTER ANIMATION ───
+const counters = document.querySelectorAll('.counter');
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.done) {
+      e.target.dataset.done = '1';
+      const target = parseInt(e.target.dataset.target);
+      const step = target / (1800 / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        e.target.textContent = Math.floor(current);
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    }
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => counterObserver.observe(c));
+
+// ─── SET MIN DATE ───
+const dateInput = document.getElementById('appt-date');
+if (dateInput) {
+  const t = new Date();
+  dateInput.min = `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
+}
+
+// ─── FORM SUBMIT ───
+const APPT_API = 'https://script.google.com/macros/s/AKfycbxc8FbH-FXN4VvF4PUYOyVZCX103OAykzVRsQAjmeOdT8XYjuZHvIfHniFVlOvaAglB/exec';
+const apptTypeLabels = { site_visit: 'Site Visit', phone_call: 'Phone Call', video_call: 'Video Call', office_visit: 'Office Visit' };
+document.getElementById('enquiry-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.btn-submit');
+  const origText = btn.textContent;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  const name = document.getElementById('enq-name').value.trim();
+  const phone = document.getElementById('enq-phone').value.trim();
+  const email = document.getElementById('enq-email').value.trim();
+  const project = document.getElementById('enq-project').value;
+  const date = document.getElementById('appt-date').value;
+  const time = document.getElementById('appt-time').value;
+  const apptRaw = (this.querySelector('input[name="appt_type"]:checked') || {}).value || 'site_visit';
+  const appointmentType = apptTypeLabels[apptRaw] || apptRaw;
+  const message = document.getElementById('enq-message').value.trim();
+  const fd = new FormData();
+  fd.append('name', name); fd.append('phone', phone); fd.append('email', email || 'none');
+  fd.append('date', date); fd.append('time', time); fd.append('appointmentType', appointmentType);
+  fd.append('project', project); fd.append('message', message);
+  try {
+    const res = await fetch(APPT_API, { method: 'POST', body: fd });
+    let json = { status: 'error', message: 'Unknown error' };
+    try { json = await res.json(); } catch (_) {}
+    if (res.ok && json.status === 'success') {
+      this.style.display = 'none';
+      document.getElementById('form-success').classList.add('show');
+    } else { btn.textContent = origText; btn.disabled = false; alert('Submission failed: ' + (json.message || res.statusText)); }
+  } catch (err) { btn.textContent = origText; btn.disabled = false; alert('Network error. Please try again or call us directly at +91 90306 69903.'); }
+});
+
+// ─── LOAD HEADER & FOOTER ───
+async function loadHeaderFooter() {
+  try {
+    const [hRes, fRes] = await Promise.all([fetch('header.html'), fetch('footer.html')]);
+    document.getElementById('header-placeholder').innerHTML = await hRes.text();
+    document.getElementById('footer-placeholder').innerHTML = await fRes.text();
+    // On home page, convert index.html#X links to #X for smooth scroll
+    document.querySelectorAll('#header-placeholder a[href^="index.html#"]').forEach(a => {
+      a.setAttribute('href', a.getAttribute('href').replace('index.html', ''));
+    });
+    // Nav scroll effect
+    const nav = document.getElementById('main-nav');
+    if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    // Hamburger
+    const hamburger = document.getElementById('nav-hamburger');
+    const navLinksList = document.querySelector('.nav-links');
+    if (hamburger && navLinksList) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = hamburger.classList.toggle('open');
+        navLinksList.classList.toggle('mobile-open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+      navLinksList.querySelectorAll('a:not(.nav-dropdown-trigger)').forEach(a => {
+        a.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            hamburger.classList.remove('open');
+            navLinksList.classList.remove('mobile-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+    // Dropdown toggle on mobile
+    document.querySelectorAll('.nav-dropdown-trigger').forEach(t => {
+      t.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) { e.preventDefault(); this.closest('.nav-dropdown').classList.toggle('open'); }
+      });
+    });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id === '#') return;
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' }); }
+      });
+    });
+  } catch (err) { console.error('Failed to load header/footer:', err); }
+}
+loadHeaderFooter();
+</script>
 </body>
 </html>
